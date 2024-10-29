@@ -1,0 +1,65 @@
+\documentclass[]{beamer}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage[slovene]{babel} 
+\usepackage{pgfpages}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{lmodern}
+\usepackage{palatino}
+\usepackage{graphicx}	
+\usepackage{enumitem}
+
+% zapiski
+\setbeameroption{hide notes}
+%\setbeameroption{show notes on second screen=right}
+
+% oblikovanje
+\mode<presentation>
+\usetheme{Berlin}
+\useinnertheme[shadows]{rounded}
+\useoutertheme{infolines}
+\usecolortheme{whale}
+
+\usefonttheme{serif}
+
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{headline}{}
+%\setbeamertemplate{footline}{}
+
+% okolja 
+\theoremstyle{definition}
+\newtheorem{aksiom}{Aksiom}
+\newtheorem{definicija}{Definicija}
+\newtheorem{primer}[definicija]{Primer}
+\newtheorem{zgled}[definicija]{Zgled}
+
+\theoremstyle{remark}
+\newtheorem{opomba}{Opomba}
+
+\theoremstyle{plain}
+\newtheorem{lema}[definicija]{Lema}
+\newtheorem{izrek}[definicija]{Izrek}
+\newtheorem{trditev}[definicija]{Trditev}
+\newtheorem{posledica}[definicija]{Posledica}
+
+\numberwithin{equation}{section}  % števec za enačbe zgleda kot (2.7) in se resetira v vsakem razdelku
+\newenvironment{dokaz}[1][Dokaz]{\begin{proof}[#1]}{\end{proof}}
+
+% metapodatki
+\title[Weierstrass-Enneperjeva parametrizacija]{Weierstrass-Enneperjeva konstrukcija\\minimalnih ploskev}
+\subtitle{}
+\author[Jon Pascal Miklavčič]{Jon Pascal Miklavčič}
+\institute[]{Mentor: doc.~dr.~Uroš Kuzman}
+\date{\tiny \today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\end{document}
