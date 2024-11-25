@@ -81,59 +81,156 @@
         Ploskev $M \subset \mathbb{R}^3$ je \emph{minimalna} natanko tedaj, ko za vsako točko $p \in M$ obstaja okolica, omejena z enostavno povezano krivuljo, ki ima najmanjšo ploščino izmed vseh ploskev z isto robno krivuljo. 
     \end{definicija}
 
-    Geometrijska definicija je lokalna. Povezava z milnimi mehurčki. 
+    Definicija je lokana, minimalne ploskve pa lahko realiziramo z milnimi “mehurčki”.
 
     \begin{columns}[t]
-    \begin{column}{0.45\textwidth}
-        \centering
-        \begin{figure}
-            \includegraphics[width=10em]{../Slike/Soap_Film.png}
-            \caption{Milni “mehurček”}
-            \label{fig:1}
-        \end{figure}
-    \end{column}
-
-    \begin{column}{0.45\textwidth}
-        \centering
-        \begin{figure}[H]
+        \begin{column}{0.45\textwidth}
             \centering
-            \begin{tikzpicture}
-                \begin{axis}[
-                    grid = both,
-                    minor tick num = 2,
-                    major grid style = {draw = lightgray},
-                    minor grid style = {draw = lightgray!25},
-                    view={110}{20},
-                    samples=50,
-                    scale = 0.55,
-                    colormap/cool,
-                    z buffer = sort,
-                    xtick={}, ytick={}, ztick={},
-                    ticklabel style={font=\tiny},
-                ]
+            \begin{figure}
+                \includegraphics[width=9em]{../Slike/Soap_Film.png}
+                \caption{Milni “mehurček”}
+                \label{fig:1}
+            \end{figure}
+        \end{column}
+
+        \begin{column}{0.45\textwidth}
+            \centering
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        grid = both,
+                        minor tick num = 2,
+                        major grid style = {draw = lightgray},
+                        minor grid style = {draw = lightgray!25},
+                        view={110}{20},
+                        samples=50,
+                        scale = 0.5,
+                        colormap/cool,
+                        z buffer = sort,
+                        xtick={}, ytick={}, ztick={},
+                        ticklabel style={font=\tiny},
+                    ]
+                    
+                    % helikoid
+                    \addplot3[
+                        surf,
+                        opacity=1,
+                        domain=-1:1, 
+                        y domain=-pi:pi,
+                        samples=60, 
+                        samples y=60,
+                    ]
+                    (
+                        {x * cos(deg(y))}, 
+                        {x * sin(deg(y))}, 
+                        {y} 
+                    );
+                    
+                    \end{axis}
+                \end{tikzpicture}
+            
+                \caption{Helikoid}
+                \label{fig:2}
+            \end{figure}
+        \end{column}
+    \end{columns}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Ukrivljenost krivulje}
+
+    \begin{definicija}
+        Naj bo $\boldsymbol{\gamma}$ regularna $C^2$ parametrizacija krivulje. Njena \emph{ukrivljenost} je podana z izrazom: 
+        $$
+        \kappa=\frac{\left\|\boldsymbol{\gamma}^{\prime} \times \boldsymbol{\gamma}^{\prime \prime}\right\|}{\left\|\boldsymbol{\gamma}^{\prime}\right\|^3}.
+        $$
+        Glede na izbrano normalo ploskve $\mathbf{n}$, lahko definiramo tudi njeno \emph{predznačeno ukrivljenost}:
+        $$
+        \kappa_s=\kappa \cdot \operatorname{sign}\left(\mathbf{n} \cdot\left(\boldsymbol{\gamma}^{\prime} \times \boldsymbol{\gamma}^{\prime \prime}\right)\right).
+        $$
+    \end{definicija}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Srednja ukrivljenost}
+
+    \begin{columns}[t]
+        \begin{column}{0.45\textwidth}
+            \vspace{0.3em}
+            
+            Naj bo $S$ ploskev v $\mathbb{R}^3$ in $p$ točka na $S$. Vsaka ravnina skozi $p$, ki vsebuje normalo na ploskev na $S$ odreže krivuljo. Ko to ravnino vrtimo za kot $\theta$ okoli normale, se ukrivljenost krivulje spreminja. 
+
+            \begin{definicija}
+                Za točko $p \in S$ definiramo \emph{srednjo ukrivljenost} kot: 
+                $$
+                H=\frac{1}{2 \pi} \int_0^{2 \pi} \kappa_s(\theta) \, d \theta.
+                $$
+            \end{definicija}
+        \end{column}
+
+        \begin{column}{0.5\textwidth}
+            \begin{figure}[H]
+                \centering
+        
+                \begin{tikzpicture}[line cap=round,line join=round,scale=0.8]
+                    % koordinate tock
+                    \coordinate (O)  at (0,0);
+                    \coordinate (X)  at (234:2.5);
+                    \coordinate (Y)  at (353:4.5);
+                    \coordinate (Z)  at (0,3.2);
+                    \coordinate (A)  at ($(O)!0.06!(Y)$);
+                    \coordinate (B)  at ($(A)+(0,2.8)$);
+                    \coordinate (B') at ($(B)+(0,1)$); 
+                    \coordinate (C)  at ($(B)+(322:2.8)$);
+                    \coordinate (C') at ($(C)+(0,1)$); 
+                    \coordinate (D)  at ($(C)+(A)-(B)$);
+                    \coordinate (E)  at ($(A)!0.75!(B)$);
+                    \coordinate (E') at ($(A)!0.75!(B)+(0,1)$);
+                    \coordinate (P') at ($(A)!0.27!(D)$);
+                    \coordinate (P'')at ($(P')+(0,3.4)$);
+                    \coordinate (Q') at ($(A)!0.64!(D)$);
+                    \coordinate (P)  at ($(P')+(0,2.4)$);
+                    \coordinate (Q)  at ($(Q')+(0,2.15)$);
+                    \coordinate (Sx) at ($(O)!0.72!(X)$);
+                    \coordinate (Sy) at ($(O)!0.9!(Y)$);
+                    \coordinate (Sz) at ($(O)!0.62!(Z)$);
+                    \coordinate (T) at ($(P)+(322:1.3)$);
+                    
+                    % osi
+                    \draw[-latex] (O) -- (X) node (X) [left]  {$x$};
+                    \draw[-latex] (O) -- (Y) node (Y) [right] {$y$};
+                    \draw[-latex] (O) -- (Z) node (Z) [above] {$z$};
+                    % ravnina pod sfero
+                    \draw[plane] (D) to[out=90,in=305] (Q) to [out=125,in=322] (P) to[out=142,in=10] (E) -- (A) -- cycle;
+                    % sfera
+                    \draw[surface] (Sx) to[out=-25,in=200,looseness=0.7] (D) to[out=20,in=240,looseness=0.7] (Sy) to[out=100,in=10] (E) to[out=190,in=20] (Sz) to[out=220,in=100] cycle;
+                    % ravnina nad sfero
+                    \draw[plane] (D) to[out=90,in=305] (Q) to [out=125,in=322] (P) to[out=142,in=10] (E) -- (B') -- (C') -- cycle;                                      
+                    % krivulja po preseku
+                    \draw[curve] (D) to[out=90,in=305] (Q) to [out=125,in=322] (P) to[out=142,in=10] (E);
+                    % tangenta
+                    \draw[thick,purple,-latex] (P) -- (T) node [midway,yshift=3mm] {\scriptsize$\boldsymbol{\mathrm{T}}$};
+                    % normala 
+                    \draw[thick,red,-latex] (P) -- (P'') node [midway,xshift=3mm] {\scriptsize$\boldsymbol{\mathrm{N}}$};
+                    % crtkana crta od p_0 do p
+                    \draw[dashed] (P) -- (P');
+                    % tocki p_0 in p 
+                    \foreach\i in{P',P}
+                      \fill (\i) circle [radius=.25mm];
+                    % oznake
+                    \draw[latex-,shorten <=2mm,shorten >=4mm] (P)  -- (3, 2.3) node {\scriptsize $p = (x_0,y_0,z_0)$};
+                    \node at (P')       [left]  {\scriptsize $p_0=(x_0,y_0,0)$};
+                    \node at (-1.2,0.7) [blue]  {$S$};
+                    \node at (2.1,0.7)  [curve] {$\boldsymbol{\gamma}$};
+                \end{tikzpicture}
                 
-                % helikoid
-                \addplot3[
-                    surf,
-                    opacity=1,
-                    domain=-1:1, 
-                    y domain=-pi:pi,
-                    samples=60, 
-                    samples y=60,
-                ]
-                (
-                    {x * cos(deg(y))}, 
-                    {x * sin(deg(y))}, 
-                    {y} 
-                );
-    
-                \end{axis}
-            \end{tikzpicture}
-    
-            \caption{Helikoid}
-            \label{fig:2}
-        \end{figure}
-    \end{column}
+                \caption{Normalna ravnina v $p$}
+                \label{fig:3}
+            \end{figure}
+        \end{column}
     \end{columns}
 
 \end{frame}
@@ -141,114 +238,26 @@
 \begin{frame}
     \frametitle{Srednja ukrivljenost}
 
-    \begin{definicija}
-        Naj bo $\boldsymbol{\gamma}$ regularna $C^2$ parametrizacija krivulje. Potem \emph{ukrivljenost} krivulje definiramo kot: 
-        $$
-        \kappa=\frac{\left\|\boldsymbol{\gamma}^{\prime} \times \boldsymbol{\gamma}^{\prime \prime}\right\|}{\left\|\boldsymbol{\gamma}^{\prime}\right\|^3}.
-        $$
-        Potem lahko definiramo tudi \emph{predznačeno ukrivljenost} krivulje: 
-        $$
-        \kappa_s=\kappa \cdot \operatorname{sign}\left(\mathbf{n} \cdot\left(\boldsymbol{\gamma}^{\prime} \times \boldsymbol{\gamma}^{\prime \prime}\right)\right).
-        $$
-    \end{definicija}
-
-    Naj bo $S$ ploskev v $\mathbb{R}^3$ in $p$ točka na $S$. Vsaka ravnina skozi $p$, ki vsebuje normalo na ploskev na $S$ odreže krivuljo. Ko to ravnino vrtimo za kot $\theta$ okoli normale, se ukrivljenost krivulje spreminja. 
-
-    \begin{definicija}
-        Za točko $p \in S$ definiramo \emph{srednjo ukrivljenost} kot: 
-        $$
-        H=\frac{1}{2 \pi} \int_0^{2 \pi} \kappa_s(\theta) \, d \theta.
-        $$
-    \end{definicija}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Srednja ukrivljenost}
-
-    \begin{figure}[H]
-        \centering
-
-        \begin{tikzpicture}[line cap=round,line join=round,scale=1]
-            % koordinate tock
-            \coordinate (O)  at (0,0);
-            \coordinate (X)  at (234:2.5);
-            \coordinate (Y)  at (353:4.5);
-            \coordinate (Z)  at (0,3.2);
-            \coordinate (A)  at ($(O)!0.06!(Y)$);
-            \coordinate (B)  at ($(A)+(0,2.8)$);
-            \coordinate (B') at ($(B)+(0,1)$); 
-            \coordinate (C)  at ($(B)+(322:2.8)$);
-            \coordinate (C') at ($(C)+(0,1)$); 
-            \coordinate (D)  at ($(C)+(A)-(B)$);
-            \coordinate (E)  at ($(A)!0.75!(B)$);
-            \coordinate (E') at ($(A)!0.75!(B)+(0,1)$);
-            \coordinate (P') at ($(A)!0.27!(D)$);
-            \coordinate (P'')at ($(P')+(0,3.4)$);
-            \coordinate (Q') at ($(A)!0.64!(D)$);
-            \coordinate (P)  at ($(P')+(0,2.4)$);
-            \coordinate (Q)  at ($(Q')+(0,2.15)$);
-            \coordinate (Sx) at ($(O)!0.72!(X)$);
-            \coordinate (Sy) at ($(O)!0.9!(Y)$);
-            \coordinate (Sz) at ($(O)!0.62!(Z)$);
-            \coordinate (T) at ($(P)+(322:1.3)$);
-            
-            % osi
-            \draw[-latex] (O) -- (X) node (X) [left]  {$x$};
-            \draw[-latex] (O) -- (Y) node (Y) [right] {$y$};
-            \draw[-latex] (O) -- (Z) node (Z) [above] {$z$};
-            % ravnina pod sfero
-            \draw[plane] (D) to[out=90,in=305] (Q) to [out=125,in=322] (P) to[out=142,in=10] (E) -- (A) -- cycle;
-            % sfera
-            \draw[surface] (Sx) to[out=-25,in=200,looseness=0.7] (D) to[out=20,in=240,looseness=0.7] (Sy) to[out=100,in=10] (E) to[out=190,in=20] (Sz) to[out=220,in=100] cycle;
-            % ravnina nad sfero
-            \draw[plane] (D) to[out=90,in=305] (Q) to [out=125,in=322] (P) to[out=142,in=10] (E) -- (B') -- (C') -- cycle;                                      
-            % krivulja po preseku
-            \draw[curve] (D) to[out=90,in=305] (Q) to [out=125,in=322] (P) to[out=142,in=10] (E);
-            % tangenta
-            \draw[thick,purple,-latex] (P) -- (T) node [midway,yshift=3mm] {\scriptsize$\boldsymbol{\mathrm{T}}$};
-            % normala 
-            \draw[thick,red,-latex] (P) -- (P'') node [midway,xshift=3mm] {\scriptsize$\boldsymbol{\mathrm{N}}$};
-            % crtkana crta od p_0 do p
-            \draw[dashed] (P) -- (P');
-            % tocki p_0 in p 
-            \foreach\i in{P',P}
-              \fill (\i) circle [radius=.25mm];
-            % oznake
-            \draw[latex-,shorten <=2mm,shorten >=4mm] (P)  -- (2.3, 2.3) node {\scriptsize $p = (x_0,y_0,z_0)$};
-            \node at (P')       [left]  {\scriptsize $p_0=(x_0,y_0,0)$};
-            \node at (-1.2,0.7) [blue]  {$S$};
-            \node at (2.1,0.7)  [curve] {$\boldsymbol{\gamma}$};
-        \end{tikzpicture}
-        
-        \caption{Normalna ravnina v $p$}
-        \label{fig:3}
-    \end{figure}
-
-\end{frame}
-
-\begin{frame}
-    \frametitle{Srednja ukrivljenost}
-
     \begin{izrek}
-        Minimalne ploskve so natanko tiste, ki imajo srednjo ukrivljenost $0$, t.j. $H=0$. 
+        Minimalne ploskve so natanko tiste, ki imajo v vsaki točki ničelno srednjo ukrivljenost. 
     \end{izrek}
 
     Alternativna karakterizacija srednje ukrivljenosti:
     $$
     H=\frac{1}{2}\left(\kappa_1+\kappa_2\right), \quad \text{kjer sta } \kappa_1 \text{ in } \kappa_2 \text{ glavni ukrivljenosti.} 
     $$
-    Kako pa izračunamo $\kappa_1$ in $\kappa_2$? $\kappa_1$ in $\kappa_2$ dobimo kot lastni vrednosti operatorja oblike $P$, ki je definiran kot: 
+    Kako pa izračunamo $\kappa_1$ in $\kappa_2$? Dobimo ju kot lastni vrednosti matrike: 
     $$
-    P=\mathrm{I}^{-1} \mathrm{II}=\begin{bmatrix} E & F \\ F & G \end{bmatrix}^{-1} \begin{bmatrix} L & M \\ M & N \end{bmatrix}.
+    \mathrm{I}^{-1} \mathrm{II}=\begin{bmatrix} E & F \\ F & G \end{bmatrix}^{-1} \begin{bmatrix} L & M \\ M & N \end{bmatrix},
     $$
-    Tukaj sta $\mathrm{I}$ in $\mathrm{II}$ matriki prve in druge fundamentalne forme.
+    kjer sta $\mathrm{I}$ in $\mathrm{II}$ matriki prve in druge fundamentalne forme.
 
 \end{frame}
 
 \begin{frame}
     \frametitle{Prva in druga fundamentalna forma}
 
-    Naj bo $\mathbf{r}=\mathbf{r}(u, v)$ regularna parametrizacija ploskve $S$. 
+    Naj bo $\mathbf{r}=\mathbf{r}(u, v)$ regularna $C^2$ parametrizacija ploskve $S$. 
 
     \begin{definicija}
         Koeficienti prve fundamentalne forme $E, F$ in $G$ so definirani kot: 
@@ -264,7 +273,7 @@
         $$
     \end{definicija}
 
-    Srednjo ukrivljenost lahko tako izrazimo kot: 
+    Pogoj za minimalnost ploskve $S$ lahko izrazimo kot: 
     $$
     H=\frac{1}{2} \frac{E N-2 F M+G L}{E G-F^2}.
     $$
@@ -274,7 +283,7 @@
 \begin{frame}
     \frametitle{Enneperjeva ploskev}
 
-    To je ploskev, ki jo lahko parametriziramo kot: 
+    Enneperjeva ploskev je ploskev podana s parametrizacijo:
     $$
     \begin{aligned}
         & x(u,v)=\frac{1}{3} u\left(1-\frac{1}{3} u^2+v^2\right), \\
@@ -283,16 +292,16 @@
     \end{aligned}
     $$
 
-    Če poračunamo njene koeficiente prve fundamentalne forme dobimo: 
+    Koeficienti njene prve fundamentalne forme so enaki:
     $$
-    E = (1 + u^2 + v^2)^2, \quad F = 0, \quad G = E = (1 + u^2 + v^2)^2.
+    E = (1 + u^2 + v^2)^2, \quad F = 0, \quad G = E.
     $$
-    Če poračunamo še njene koeficiente druge fundamentalne forme dobimo: 
+    Koeficienti njene druge fundamentalne forme so enaki:
     $$
-    \scalebox{1}{$L = \frac{(u^2 + v^2)(4 + 2u^2 + 2v^2) + 2}{\left\|\mathbf{n}\right\|}, \quad M = 0, \quad N = -L = \frac{-(u^2 + v^2)(4 + 2u^2 + 2v^2) + 2}{\left\|\mathbf{n}\right\|}$}.
+    L = \frac{1}{\left\|\mathbf{n}\right\|}(u^2 + v^2)(4 + 2u^2 + 2v^2) + 2, \quad M = 0, \quad N = -L.
     $$
 
-    Torej za srednjo ukrivljenost po formuli dobimo: 
+    Torej za njeno srednjo ukrivljenost velja: 
     $$
     H=\frac{1}{2} \frac{E N-2 F M+G L}{E G-F^2} = \frac{1}{2} \frac{EN - 0 - EN}{EG - F^2} = 0.
     $$
@@ -348,7 +357,7 @@
     \frametitle{Weierstrass-Enneperjeva parametrizacija}
 
     \begin{izrek}
-        Naj bosta $f$ in $g$ funkciji na enotskem disku ali kompleksni ravnini taki, da je $f$ holomorfna, $g$ meromorfna in $f g^2$ holomorfna. Naj bodo $c_1, c_2, c_3$ kompleksne konstante. Potem je ploskev, podana s spodnjo parametrizacijo minimalna:
+        Naj bosta $f$ in $g$ kompleksni funkciji, ki sta definirani na odprti množici $\mathcal{D}\subseteq\mathbb{C}$. Naj bo $f$ holomorfna, $g$ meromorfna in $f g^2$ holomorfna. Naj bodo $c_1, c_2, c_3$ kompleksne konstante. Potem je ploskev, podana s spodnjo parametrizacijo minimalna:
         $$
         \begin{aligned}
             x_k(\zeta) & =\operatorname{Re}\left\{\int_0^\zeta \varphi_k(z) \, dz\right\}+c_k, \quad k=1,2,3 \\
@@ -357,14 +366,14 @@
             \varphi_3 & =f g
         \end{aligned}
         $$
-        Še več, vsaka minimalna ploskev, ki ima parametrizacijo, se da lokalno predstaviti na tak način.
+        Še več, vsako minimalno ploskev, ki premore regularno parametrizacijo, lahko v okolici poljubne točke predstavimo na tak način.
     \end{izrek}
 \end{frame}
 
 \begin{frame}
     \frametitle{Enneperjeva ploskev}
 
-    Parametrizirajmo zadaj Enneperjevo ploskev še z Weierstrass-Enneperjevo parametrizacijo. Izberemo $f(z)=1$, $g(z)=z$ in $c_k = 0$. Poračunamo:
+    Oglejmo si primer konstrukcije minimalne ploskve z uporabo izreka. Naj bo $z=u+iv$ kompleksna spremenljivka. Izberemo $f(z)=1$, $g(z)=z$ in $c_k = 0$. Po izreku velja:
     \begin{columns}[t]
         \begin{column}{0.3\textwidth}
             $$
@@ -404,7 +413,25 @@
 
     \vspace{3em}
 
-    Vidimo, da dobimo prav parametrizacijo Enneperjeve ploskve.
+    Vidimo, da dobimo parametrizacijo Enneperjeve ploskve.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Zaključek}
+
+    Cilj naloge je naslednji:
+    \begin{itemize}
+        \item[$\bullet$] Konstruirati in vizualizirati minimalne ploskve s pomočjo Weierstrass-Enneperjeve reprezentacije;
+        \item[$\bullet$] Ta reprezentacija uporabna tudi kot orodje za dokazovanje teoretičnih izrekov, povezanih z minimalnimi ploskvami;
+        \item[$\bullet$] Razširiti obravnavo tudi na ploskve s konstantno srednjo ukrivljenostjo, ki ni enaka nič. Za te ploskve obstaja podobna reprezentacija, imenovana Kenmotsujeva reprezentacija.
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \LARGE HVALA ZA POZORNOST!
+    \end{center}
 \end{frame}
 
 \end{document}
