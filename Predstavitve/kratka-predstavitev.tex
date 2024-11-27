@@ -81,14 +81,14 @@
         Ploskev $M \subset \mathbb{R}^3$ je \emph{minimalna} natanko tedaj, ko za vsako točko $p \in M$ obstaja okolica, omejena z enostavno povezano krivuljo, ki ima najmanjšo ploščino izmed vseh ploskev z isto robno krivuljo. 
     \end{definicija}
 
-    Definicija je lokana, minimalne ploskve pa lahko realiziramo z milnimi “mehurčki”.
+    Definicija je lokalna, ploščina take ploskve ni nujno globalno minimalna. Zaradi površinske napetosti je to oblika, ki jo zavzamejo milni mehurčki.
 
-    \begin{columns}[t]
+    \begin{columns}[b]
         \begin{column}{0.45\textwidth}
             \centering
             \begin{figure}
                 \includegraphics[width=9em]{../Slike/Soap_Film.png}
-                \caption{Milni “mehurček”}
+                \caption{Milni mehurček}
                 \label{fig:1}
             \end{figure}
         \end{column}
@@ -142,7 +142,7 @@
     \frametitle{Ukrivljenost krivulje}
 
     \begin{definicija}
-        Naj bo $\boldsymbol{\gamma}$ regularna $C^2$ parametrizacija krivulje. Njena \emph{ukrivljenost} je podana z izrazom: 
+        Denimo, da je krivulja podana z regularno dvakrat zvezno odvedljivo parametrizacijo $\boldsymbol{\gamma}$. Potem je njena \emph{ukrivljenost} je podana z izrazom: 
         $$
         \kappa=\frac{\left\|\boldsymbol{\gamma}^{\prime} \times \boldsymbol{\gamma}^{\prime \prime}\right\|}{\left\|\boldsymbol{\gamma}^{\prime}\right\|^3}.
         $$
@@ -159,7 +159,6 @@
 
     \begin{columns}[t]
         \begin{column}{0.45\textwidth}
-            \vspace{0.3em}
             
             Naj bo $S$ ploskev v $\mathbb{R}^3$ in $p$ točka na $S$. Vsaka ravnina skozi $p$, ki vsebuje normalo na ploskev na $S$ odreže krivuljo. Ko to ravnino vrtimo za kot $\theta$ okoli normale, se ukrivljenost krivulje spreminja. 
 
@@ -275,7 +274,7 @@
 
     Pogoj za minimalnost ploskve $S$ lahko izrazimo kot: 
     $$
-    H=\frac{1}{2} \frac{E N-2 F M+G L}{E G-F^2}.
+    H=\frac{1}{2} \frac{E N-2 F M+G L}{E G-F^2} = 0.
     $$
 
 \end{frame}
@@ -422,7 +421,7 @@
     Cilj naloge je naslednji:
     \begin{itemize}
         \item[$\bullet$] Konstruirati in vizualizirati minimalne ploskve s pomočjo Weierstrass-Enneperjeve reprezentacije;
-        \item[$\bullet$] Ta reprezentacija uporabna tudi kot orodje za dokazovanje teoretičnih izrekov, povezanih z minimalnimi ploskvami;
+        \item[$\bullet$] Reprezentacija predstavlja minimalne ploskve s pomočjo holomorfnih funkcij. To dejstvo je uporabno tudi kot orodje za dokazovanje izrekov, povezanih z minimalnimi ploskvami;
         \item[$\bullet$] Razširiti obravnavo tudi na ploskve s konstantno srednjo ukrivljenostjo, ki ni enaka nič. Za te ploskve obstaja podobna reprezentacija, imenovana Kenmotsujeva reprezentacija.
     \end{itemize}
 
