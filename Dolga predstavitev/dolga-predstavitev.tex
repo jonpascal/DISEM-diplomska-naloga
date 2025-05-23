@@ -402,80 +402,80 @@
         \end{equation*}
         natanko tedaj, ko ima njen graf $S=\mathcal{G}_f$ v vsaki točki  ničelno srednjo ukrivljenost. 
     \end{izrek}
-    \pause
-    \emph{Dokaz:}
-
-    Izberimo točko $p_0\in D$. Evklidske koordinate, ki ohranijo $z$ smer izberemo tako, da velja $p_0=(0,0)$, $f(0,0)=0$ in 
-    \begin{equation*}
-        f(x, y)=a x+O\left(x^2+y^2\right), \quad \text{za }  a \geq 0.    
-    \end{equation*}
-    \pause 
-    Ekvivalenco iz trditve dokazujemo v točki $(0,0)$. Izberimo si ortonormirano bazo $\mathbb{R}^3$:
-    \begin{equation*}
-        \mathbf{v}_1=\frac{1}{\sqrt{1+a^2}}(1,0, a), \quad \mathbf{v}_2=(0,1,0), \quad \mathbf{v}_3=\frac{1}{\sqrt{1+a^2}}(-a, 0,1).
-    \end{equation*}
-    $\mathbf{v}_1$ in $\mathbf{v}_2$ razpenjata tangentno ravnino $T_0 S$, $\mathbf{v}_3$ pa je normala na $T_0S$. Označimo z $(u, v, w)$ Evklidske koordinate, ki so vezane na to bazo. 
+    % \pause
+    % \emph{Dokaz:}
+    % 
+    % Izberimo točko $p_0\in D$. Evklidske koordinate, ki ohranijo $z$ smer izberemo tako, da velja $p_0=(0,0)$, $f(0,0)=0$ in 
+    % \begin{equation*}
+    %     f(x, y)=a x+O\left(x^2+y^2\right), \quad \text{za }  a \geq 0.    
+    % \end{equation*}
+    % \pause 
+    % Ekvivalenco iz trditve dokazujemo v točki $(0,0)$. Izberimo si ortonormirano bazo $\mathbb{R}^3$:
+    % \begin{equation*}
+    %     \mathbf{v}_1=\frac{1}{\sqrt{1+a^2}}(1,0, a), \quad \mathbf{v}_2=(0,1,0), \quad \mathbf{v}_3=\frac{1}{\sqrt{1+a^2}}(-a, 0,1).
+    % \end{equation*}
+    % $\mathbf{v}_1$ in $\mathbf{v}_2$ razpenjata tangentno ravnino $T_0 S$, $\mathbf{v}_3$ pa je normala na $T_0S$. Označimo z $(u, v, w)$ Evklidske koordinate, ki so vezane na to bazo. 
      
 \end{frame}
 
-\begin{frame}
-    \frametitle{Dokaz Meusnierjevega izreka}
-
-    Prvotne koordinate izrazijo kot 
-    \begin{equation*}
-        (x, y, z)=u \mathbf{v}_1+v \mathbf{v}_2+w \mathbf{v}_3.
-    \end{equation*}
-    V koordinatah $(u,v,w)$ je ploskev $S$ na okolici koordinatnega izhodišča podana kot:
-    \begin{equation*}
-        w=g(u, v), \quad g(0,0)=0, \quad \mathrm{d} g(0,0)=0.
-    \end{equation*}
-    \pause 
-    Vemo, da je srednja ukrivljenost $S$ v točki $(0,0)$ enaka $2H=\bigtriangleup g(0,0)$. $g$ bomo prevedli na $f$ in izrazili $\mathscr{G}(f)(0,0)$ z $\bigtriangleup g(0,0)$. 
-    \pause 
-    \vspace{0.8em}
-
-    V koordinatah $(x, y, z)$ je ploskev $S$ parametrizirana kot 
-    \begin{equation*}
-        x=\frac{1}{\sqrt{1+a^2}}(u-a g(u, v)), \quad y=v, \quad z=\frac{1}{\sqrt{1+a^2}}(a u+g(u, v)) .
-    \end{equation*}
-    Ker je $S$ prav tako podana z $z=f(x, y)$ dobimo izraz
-    \begin{equation*}
-        a u+g(u, v)=\sqrt{1+a^2} \cdot f\left(\frac{u-a g(u, v)}{\sqrt{1+a^2}}, v\right) .
-    \end{equation*}
-    \pause 
-    Ta izraz zdaj dvakrat odvajamo po $u$ in po $v$: 
-    \begin{align*}
-        g_{u u} & =f_{x x}\left(1-a g_u\right)^2 / \sqrt{1+a^2}+f_x\left(-a g_{u u}\right) \\
-        g_{v v} & =f_{x x}\left(-a g_v\right)^2 / \sqrt{1+a^2}+f_x\left(-a g_{v v}\right)+f_{x y}\left(-2 a g_v\right)+f_{y y} \sqrt{1+a^2} .
-    \end{align*}
-    
-\end{frame}
-
-\begin{frame}
-    \frametitle{Dokaz Meusnierjevega izreka}
-
-    Če ovrednotimo druge parcialne odvode pri $(u, v)=(x, y)= (0,0)$ in upoštevamo, da velja $f_x(0,0)=a$, $f_y(0,0)=0$, $g_u(0,0)=g_v(0,0)=0$ dobimo 
-    \begin{align*}
-        g_{u u}(0,0) & =f_{x x}(0,0) / \sqrt{1+a^2}-a^2 g_{u u}(0,0) \\
-        g_{v v}(0,0) & =-a^2 g_{v v}(0,0)+f_{y y}(0,0) \sqrt{1+a^2}
-    \end{align*}
-    in tako 
-    \begin{equation*}
-        f_{x x}(0,0)={\sqrt{1+a^2}}^3 g_{u u}(0,0), \quad f_{y y}(0,0)=\sqrt{1+a^2} g_{v v}(0,0)
-    \end{equation*}
-    \pause 
-    Tako pri $(0,0)$ dobimo
-    \begin{align*}
-        \mathscr{G}(f) & =\left(1+f_y^2\right) f_{x x}-2 f_x f_y f_{x y}+\left(1+f_x^2\right) f_{y y} \\
-        & ={\sqrt{1+a^2}}^3 g_{u u}+\left(1+a^2\right) \sqrt{1+a^2} g_{v v} \\
-        & ={\sqrt{1+a^2}}^3 \bigtriangleup g .
-    \end{align*}
-    To pokaže, da je $\mathscr{G}(f)(0,0)=0$ natanko tedaj, ko je $\bigtriangleup g(0,0)=2H=0$. \hfill $\square$
-    \pause 
-    \begin{definicija}
-        Gladka ploskev v $\mathbb{R}^3$ je \textcolor{red1}{minimalna}, če je njena povprečna ukrivljenost v vsaki točki ničelna, t.~j.~$\frac{1}{2}(\kappa_1+\kappa_2)=0$.
-    \end{definicija}
-\end{frame}
+% \begin{frame}
+%     \frametitle{Dokaz Meusnierjevega izreka}
+% 
+%     Prvotne koordinate izrazijo kot 
+%     \begin{equation*}
+%         (x, y, z)=u \mathbf{v}_1+v \mathbf{v}_2+w \mathbf{v}_3.
+%     \end{equation*}
+%     V koordinatah $(u,v,w)$ je ploskev $S$ na okolici koordinatnega izhodišča podana kot:
+%     \begin{equation*}
+%         w=g(u, v), \quad g(0,0)=0, \quad \mathrm{d} g(0,0)=0.
+%     \end{equation*}
+%     \pause 
+%     Vemo, da je srednja ukrivljenost $S$ v točki $(0,0)$ enaka $2H=\bigtriangleup g(0,0)$. $g$ bomo prevedli na $f$ in izrazili $\mathscr{G}(f)(0,0)$ z $\bigtriangleup g(0,0)$. 
+%     \pause 
+%     \vspace{0.8em}
+% 
+%     V koordinatah $(x, y, z)$ je ploskev $S$ parametrizirana kot 
+%     \begin{equation*}
+%         x=\frac{1}{\sqrt{1+a^2}}(u-a g(u, v)), \quad y=v, \quad z=\frac{1}{\sqrt{1+a^2}}(a u+g(u, v)) .
+%     \end{equation*}
+%     Ker je $S$ prav tako podana z $z=f(x, y)$ dobimo izraz
+%     \begin{equation*}
+%         a u+g(u, v)=\sqrt{1+a^2} \cdot f\left(\frac{u-a g(u, v)}{\sqrt{1+a^2}}, v\right) .
+%     \end{equation*}
+%     \pause 
+%     Ta izraz zdaj dvakrat odvajamo po $u$ in po $v$: 
+%     \begin{align*}
+%         g_{u u} & =f_{x x}\left(1-a g_u\right)^2 / \sqrt{1+a^2}+f_x\left(-a g_{u u}\right) \\
+%         g_{v v} & =f_{x x}\left(-a g_v\right)^2 / \sqrt{1+a^2}+f_x\left(-a g_{v v}\right)+f_{x y}\left(-2 a g_v\right)+f_{y y} \sqrt{1+a^2} .
+%     \end{align*}
+%     
+% \end{frame}
+% 
+% \begin{frame}
+%     \frametitle{Dokaz Meusnierjevega izreka}
+% 
+%     Če ovrednotimo druge parcialne odvode pri $(u, v)=(x, y)= (0,0)$ in upoštevamo, da velja $f_x(0,0)=a$, $f_y(0,0)=0$, $g_u(0,0)=g_v(0,0)=0$ dobimo 
+%     \begin{align*}
+%         g_{u u}(0,0) & =f_{x x}(0,0) / \sqrt{1+a^2}-a^2 g_{u u}(0,0) \\
+%         g_{v v}(0,0) & =-a^2 g_{v v}(0,0)+f_{y y}(0,0) \sqrt{1+a^2}
+%     \end{align*}
+%     in tako 
+%     \begin{equation*}
+%         f_{x x}(0,0)={\sqrt{1+a^2}}^3 g_{u u}(0,0), \quad f_{y y}(0,0)=\sqrt{1+a^2} g_{v v}(0,0)
+%     \end{equation*}
+%     \pause 
+%     Tako pri $(0,0)$ dobimo
+%     \begin{align*}
+%         \mathscr{G}(f) & =\left(1+f_y^2\right) f_{x x}-2 f_x f_y f_{x y}+\left(1+f_x^2\right) f_{y y} \\
+%         & ={\sqrt{1+a^2}}^3 g_{u u}+\left(1+a^2\right) \sqrt{1+a^2} g_{v v} \\
+%         & ={\sqrt{1+a^2}}^3 \bigtriangleup g .
+%     \end{align*}
+%     To pokaže, da je $\mathscr{G}(f)(0,0)=0$ natanko tedaj, ko je $\bigtriangleup g(0,0)=2H=0$. \hfill $\square$
+%     \pause 
+%     \begin{definicija}
+%         Gladka ploskev v $\mathbb{R}^3$ je \textcolor{red1}{minimalna}, če je njena povprečna ukrivljenost v vsaki točki ničelna, t.~j.~$\frac{1}{2}(\kappa_1+\kappa_2)=0$.
+%     \end{definicija}
+% \end{frame}
 
 \begin{frame}
     \frametitle{J.~B.~Meusnier - 1776 - Helikoid}
@@ -851,7 +851,7 @@
 \begin{frame}
     \frametitle{Izotermalne koordinate}
 
-    Naj bo $F: D \rightarrow \mathbb{R}^n$ gladka imerzija in naj bo $\mathrm{d} s^2=\mathrm{d} x_1^2+\cdots+\mathrm{d} x_n^2$ Evklidska metrika na $\mathbb{R}^n$. $F$ na $M$ določi \textcolor{red1}{Riemannovo metriko} 
+    Naj bo $F: D \rightarrow \mathbb{R}^n$ gladka imerzija in naj bo $\mathrm{d} s^2=\mathrm{d} x_1^2+\cdots+\mathrm{d} x_n^2$ Evklidska metrika na $\mathbb{R}^n$. $F$ na $D$ določi \textcolor{red1}{Riemannovo metriko} 
     \begin{equation*}
         g=\left|F_u\right|^2 \mathrm{d} u^2+\left(F_u \cdot F_v\right)(\mathrm{d} u \mathrm{d} v+\mathrm{d} v \mathrm{d} u)+\left|F_v\right|^2 \mathrm{d} v^2.
     \end{equation*}
@@ -897,7 +897,7 @@
     \frametitle{Weierstrass-Enneperjeva reprezentacija minimalnih ploskev}
 
     \begin{izrek}[Weierstrass-Enneperjev reprezentacijski izrek]
-        Naj bo $D$ povezano območje v $\mathbb{C}$. Preslikava $X=\left(X_1, X_2, \ldots, X_n\right): D \rightarrow \mathbb{R}^n$ razreda $\mathscr{C}^2$ parametrizira konformno minimalno ploskev $X(D) \subset \mathbb{R}^n$ natanko tedaj, ko je
+        Naj bo $D$ povezano območje v $\mathbb{C}$. Imerzija $X=\left(X_1, X_2, \ldots, X_n\right): D \rightarrow \mathbb{R}^n$ razreda $\mathscr{C}^2$ parametrizira konformno minimalno ploskev $X(D) \subset \mathbb{R}^n$ natanko tedaj, ko je
         \begin{equation*}
             x=\left(x_1, x_2, \ldots, x_n\right): D \rightarrow \mathbb{C}^n \setminus \{0\} \quad \text{holomorfna in velja} \quad  \sum_{k=1}^n x_k^2=0.
         \end{equation*}
