@@ -115,29 +115,29 @@
 
 \begin{frame}
     \frametitle{Osnovni podatki in Plateaujev problem}
+    
+    To so ploskve, ki \textcolor{red1}{lokalno minimiziarjo ploščino} v smislu, da ima poljuben dovolj majhen del ploskve najmanjšo površino med vsemi ploskvami z istim robom.
+    \pause 
+    \vspace{0.8em}
+    
+    Milni mehurček, ki ga napenja sklenjena krivulja v prostoru dobil obliko minimalne ploskve. 
+    
+    \vspace{0.8em}
+    
+    Kos raztegljivega blaga v obliki diska, napet kot zavesa na krivuljo v prostoru zavzame obliko minimalne ploskve. Predstavlja \textcolor{red1}{konformno parametizacijo}.
+    \pause 
+    \vspace{0.8em}
+    
+    Eksperimenti z milnimi mehurčki. \textcolor{red1}{Joseph Plateau} - 1873. 
+    
+    \vspace{0.8em}
+    
+    \textcolor{red1}{Plateaujev problem} - Ali vsaka sklenjena Jordanova krivulja (krivulja homemorfna $S^1$) v $\mathbb{R}^3$ razpenja minimalno ploskev? Odgovor je pritrdilen, kar sta neodvisno dokazala Tibor Radó (1930) in Jesse Douglas (1932).
+    \pause 
+    \vspace{0.8em}
 
     Minimalne ploskve si bomo ogledali v Evklidskih prostorih. Seveda se na njih lahko gleda v poljubni Riemannovi mnogoterosti dimenzije vsaj $3$, ampak v tem primeru ne obstaja vedno povezava s kompleksno analizo. 
 
-    \vspace{0.8em}
-
-    To so ploskve v prostoru, ki \textcolor{red1}{lokalno minimiziarjo ploščino} v smislu, da ima poljuben dovolj majhen del ploskve najmanjšo površino med vsemi ploskvami z istim robom.
-
-    \vspace{0.8em}
-
-    Te ploskve se pojavijo naravno v našem svetu. Zakoni fizike pravijo, da bo milni mehurček, ki ga napenja sklenjena krivulja v prostoru dobil obliko minimalne ploskve. 
-
-    \vspace{0.8em}
-    
-    Če vzamamo kos raztegljivega blaga v obliki diska in ga kot zaveso obesimo na krivuljo v prostoru, kjer pustimo, da se blago po robu prosto premika, bo zavzelo obliko minimalne ploskve. Pozicija točk na ploskvi pa bo glede na originalno pozicijo prestavljala \textcolor{red1}{konformno parametizacijo}.
-
-    \vspace{0.8em}
-
-    Eksperimenti z milnimi mehurčki. \textcolor{red1}{Joseph Plateau} - 1873. 
-
-    \vspace{0.8em}
-
-    \textcolor{red1}{Plateaujev problem} - Ali vsaka sklenjena Jordanova krivulja (krivulja homemorfna $S^1$) v $\mathbb{R}^3$ razpenja minimalno ploskev? Odgovor je pritrdilen, kar sta neodvisno dokazala Tibor Radó (1930) in Jesse Douglas (1932). Po drugi starni pa če bi vzeli $2$ ali več Jordanovih krivulj, ni nujno, da jih lahko povezali z minimalno ploskvijo. 
-    
 \end{frame}
 
 \begin{frame}
@@ -186,12 +186,13 @@
             \begin{definicija}
                 Minimalna ploskev v $\mathbb{R}^3$ je taka, ki \textcolor{red1}{lokalno minimizira ploščino} med vsemi bližnjimi ploskvami z istim robom.
             \end{definicija}
-            Prva poznana minimalna ploskev. 
+            \pause
+            Prva poznana netrivialna minimalna ploskev. 
 
             \vspace{0.8em}
 
-            Leta 1744 je Euler dokazal, da je ketenoida minimalna ploskev. Je edina netrivialna \textcolor{red1}{rotacijska minimalna ploskev} v $\mathbb{R}^3$. 
-            
+            Leta 1744 je Euler dokazal, da je katenoida minimalna ploskev. Je edina netrivialna \textcolor{red1}{rotacijska minimalna ploskev} v $\mathbb{R}^3$. 
+            \pause
             \vspace{0.8em}
 
             Dobimo jo z rotacijo grafa hiperboličnega kosinusa (t.~i.~“verižnice”) okoli izbrane osi v $\mathbb{R}^3$. Torej
@@ -208,7 +209,7 @@
 \begin{frame}
     \frametitle{J.~L.~Lagrange 1760 - grafi z minimalno ploščino}
 
-    Naj bo $D$ omejena podmnožica ravnine $\mathbb{R}^2$ z odsekoma $\mathscr{C}^1$ robom $b D$. Naj bo funkcija $f: \overline{D} \rightarrow \mathbb{R}$ razreda $\mathscr{C}^2$ definirana na zaprtju $\overline{D}$. Njen graf je množica točk
+    Naj bo $D \subset \mathbb{R}^2$ omejena z odsekoma $\mathscr{C}^1$ robom $b D$. Naj bo funkcija $f: \overline{D} \rightarrow \mathbb{R}$ razreda $\mathscr{C}^2$. Njen graf je množica točk
     \begin{equation*}
         \mathcal{G}_f=\left\{(x, y, z) \in \mathbb{R}^3 \mid(x, y) \in \overline{D}, z=f(x, y)\right\}    
     \end{equation*}
@@ -216,15 +217,16 @@
     \begin{equation*}
         \operatorname{Area}(f)=\iint_{D} \sqrt{1+f_x^2+f_y^2} \, \mathrm{d} x \mathrm{d} y=\iint_{D} \sqrt{1+|\nabla f|^2} \, \mathrm{d} x \mathrm{d} y.    
     \end{equation*}
-    Hočemo najti funkcije $f$, ki bodo imele najmanjšo ploščino med vsemi bližnjimi grafi nad $\overline{D}$ z enakimi robnimi vrednostmi.
-
+    \pause
+    Iščemo funkcije $f$, ki bodo imele najmanjšo ploščino med vsemi bližnjimi grafi z enakimi robnimi vrednostmi.
+    \pause
     \vspace{0.8em}
 
-    Izberemo $\mathscr{C}^1$ funkcijo $h: \overline{D} \rightarrow \mathbb{R}$, za katero velja $h(b D) \equiv 0$. Za $s \in \mathbb{R}$ si ogledamo naslednjo funkcijo:
+    Izberemo $\mathscr{C}^1$ funkcijo $h: \overline{D} \rightarrow \mathbb{R}$, za katero velja $h(b D) \equiv 0$. Za $s \in \mathbb{R}$ si oglejmo funkcijo
     \begin{equation*}
         s \longmapsto \operatorname{Area}(f+s h) \in \mathbb{R}_{\geq 0} .    
     \end{equation*}
-    Funkcija $f$ bo stacionarna točka \textcolor{red1}{ploščinskega funkcionala} natanko tedaj, ko bo pri $s=0$ za vse zgoraj opisane deformacije $h$ veljalo
+    Funkcija $f$ bo stacionarna točka \textcolor{red1}{ploščinskega funkcionala} natanko tedaj, ko bo pri $s=0$
     \begin{equation*}
         \left.\frac{\mathrm{d}}{\mathrm{d} s}\right|_{s=0} \operatorname{Area}(f+s h)=0.
     \end{equation*}
@@ -240,8 +242,9 @@
         & =\iint_{D} \frac{f_x h_x+f_y h_y}{\sqrt{1+f_x^2+f_y^2}} \, \mathrm{d} x \mathrm{d} y \\
         & =\iint_{D} \frac{\nabla f \cdot \nabla h}{\sqrt{1+|\nabla f|^2}} \, \mathrm{d} x \mathrm{d} y
     \end{align*}
-    Ker poznamo robne vrednosti deformacije $h$ in funkcije $f$ je na tem koraku smiselno uporabiti Gaussov izrek, ki bo zgornji integral po območju povezal integralom po robu tega območja. 
-
+    \pause
+    Ker poznamo robne vrednosti deformacije $h$ in funkcije $f$ uporabimo Gaussov izrek. 
+    \pause
     \vspace{0.8em}
 
     Če upoštevamo, da za funkcijo $h$ in vektorsko polje $\mathbf{F}$ velja $\operatorname{div}(h \mathbf{F})=\nabla h \cdot \mathbf{F}+h \cdot \operatorname{div}(\mathbf{F})$ dobimo t.~i.~prvo Greenovo identiteto
@@ -260,6 +263,7 @@
         \left.\frac{\mathrm{d}}{\mathrm{d} s}\right|_{s=0} \operatorname{Area}(f+s h) & =\iint_{D} \nabla h \cdot \frac{\nabla f}{\sqrt{1+|\nabla f|^2}} \, \mathrm{d} x \mathrm{d} y \\
         & =-\iint_{D}h \cdot \operatorname{div}\left(\frac{\nabla f}{\sqrt{1+|\nabla f|^2}}\right) \, \mathrm{d} x \mathrm{d} y,
     \end{align*}
+    \pause
     Zaradi zveznosti $h$, je izraz enak $0$ za vse izbore $h$ natanko takrat, ko je divergenca identično enaka $0$ na $D$. To lahko zapišemo v naslednji obliki
     \begin{equation*}
         \frac{\partial}{\partial x} \frac{f_x}{\sqrt{1+|\nabla f|^2}}+\frac{\partial}{\partial y} \frac{f_y}{\sqrt{1+|\nabla f|^2}}=\frac{\left(1+f_y^2\right) f_{x x}-2 f_x f_y f_{x y}+\left(1+f_x^2\right) f_{y y}}{\left(1+|\nabla f|^2\right)^{3 / 2}}=0 , 
@@ -268,31 +272,44 @@
     \begin{equation*}
         \left(1+f_y^2\right) f_{x x}-2 f_x f_y f_{x y}+\left(1+f_x^2\right) f_{y y}=0 .
     \end{equation*}
+    \pause
     To je \textcolor{red1}{Euler-Lagrangeova enačba} za ploščinski funkcional. Je eliptična PDE drugega reda, ki jo poznamo pod imenom \textcolor{red1}{enačba za minimalne grafe}.
     
-    \vspace{0.8em}
+\end{frame}
     
-    Na tej točki se naravno vprašamo, ali rešitev enačbe za minimalne grafe z zvezno določenimi robnimi vrednostmi na $bD$ sploh obstaja in ali je enolična. Ta Dirichletov problem za enačbo minimalnega grafa je leta 1930 razrešil T.~Radó za omejena konveksna območja $D \subset \mathbb{R}^2$. Rešitev je enolična in absolutno minimizira ploščino med \emph{vsemi} ploskvami s takim robom.
+\begin{frame}
+    \frametitle{Rešitev enačbe za minimalne grafe}
+    
+    Na tej točki se naravno vprašamo, ali rešitev enačbe za minimalne grafe z zvezno določenimi robnimi vrednostmi na $bD$ sploh obstaja in ali je enolična. Ta Dirichletov problem za enačbo minimalnega grafa je leta 1930 razrešil T.~Radó za omejena konveksna območja $D \subset \mathbb{R}^2$. 
+    \pause 
+    \vspace{0.8em}
+
+    \textcolor{red1}{Enoličnost rešitve:} Če je $D\subset \mathbb{R}^2$ omejena in je ploskev definirana kot graf funkcije $f$ nad $\overline{D}$, ki zadošča enačbi za minimalne grafe, potem $f$ absolutno minimizira ploščino.
+    \pause 
+    \vspace{0.8em}
+
+    \textcolor{red1}{Obstoj reštve:} Če je $D\subset \mathbb{R}^2$ konveksna, potem za zvezno določene robne vrednosti obstaja rešitev enačbe za minimalne grafe. 
+    \pause 
+    \begin{definicija}
+        Gladka ploskev v $\mathbb{R}^3$ je minimalna natanko tedaj, ko je stacionarna točka plošlinskega funkcionala glede na deformacije na kompaktnih množicah.
+    \end{definicija}
 
 \end{frame}
 
 \begin{frame}
     \frametitle{Ukrivljenost krivulj in ploskev}
 
-    Enačbo za minimalne grafe bi si radi interpretirali na bolj geometrijski način. Pred tem si moramo najprej ogledati koncepta glavnih ukrivljenosti in povprečne ukrivljenosti ploskve v Evklidskem prostoru $\mathbb{R}^n$.
-
+    Enačbo za minimalne grafe bi si radi interpretirali na bolj geometrijski način. Oglejmo si koncepta glavnih ukrivljenosti in povprečne ukrivljenosti ploskve v Evklidskem prostoru $\mathbb{R}^n$.
+    \pause
     \begin{aksiom}
         Ukrivljenost krivulje ali ploskve je invariantna za afine linearne preslikave $\mathbb{R}^n \rightarrow \mathbb{R}^n$ oblike $x \mapsto A x+b$, kjer je $b \in \mathbb{R}^n$ in $A \in O_n(\mathbb{R})$ iz ortogonalne grupe na $\mathbb{R}^n$. Takim preslikavam pravimo \textcolor{red1}{toge}.
     \end{aksiom}
-    Toge preslikave so ravno izometrije Evklidske metrike na $\mathbb{R}^n$. 
-
-    \vspace{0.8em}
-
+    \pause
     Enostavna posledica izreka o implicitni funkciji je ta, da lahko vsako gladko krivuljo $C$ okoli točke $p \in C$ predstavimo kot graf nad njeno tangento $T_p C$. Analogna trditev drži za ploskve. 
-    
+    \pause
     \vspace{0.8em}
 
-    Najprej si bomo ogledali ukrivljenost gladke krivulje v ravnini, torej $C \subset \mathbb{R}^2$. V tem primeru lahko poljubno točko $p \in C$, s togim premikom premaknemo v koordinatno izhodišče, njeno tangento $T_p C$ pa na $x$ os. Lokalno je torej krivulja $C$ v okolici izhodišča graf gladke funkcije $y=f(x)$, definirane na intervalu okoli $0 \in \mathbb{R}$. Očitno velja $f(0)=f^{\prime}(0)=0$. Taylorjev razvoj $f$ pri $0$ se potem glasi
+    Najprej si oglejmo ukrivljenost gladke krivulje $C \subset \mathbb{R}^2$. Poljubno točko $p \in C$ lahko s togim premikom premaknemo v koordinatno izhodišče, njeno tangento $T_p C$ pa na $x$ os. Lokalno je torej krivulja $C$ graf gladke funkcije $y=f(x)$, definirane na intervalu okoli $0 \in \mathbb{R}$. Torej:
     \begin{equation*}
         y=f(x)=\frac{1}{2} f^{\prime \prime}(0) x^2+o\left(x^2\right),
     \end{equation*}
@@ -303,33 +320,36 @@
 \begin{frame}
     \frametitle{Ukrivljenost krivulj}
 
-    Najdimo zdaj radij krožnice, ki se bo najbolje prilegala razvoju te funkcije v točki $(0,0)$. Očitno je, da ima ta krožnica središče na $y$ osi in se dotika grafa v točki $(0,0)$, torej je oblike
+    Najdimo zdaj radij krožnice, ki se bo najbolje prilegala razvoju te funkcije v točki $(0,0)$. Očitno je, da je krožnica oblike
     \begin{equation*}
         x^2+(y-r)^2=r^2
     \end{equation*}
-    za nek $r \in \mathbb{R} \setminus \{0\}$, razen v primeru, ko je $f^{\prime \prime}(0)=0$, kadar pa dobimo $r=\infty$. Če to enačbo razrešimo na $y$ v okolici $(0,0)$ dobimo 
+    za nek $r \in \mathbb{R} \setminus \{0\}$, razen v primeru, ko je $f^{\prime \prime}(0)=0$, kadar dobimo $r=\infty$. \pause Če to enačbo razrešimo na $y$ v okolici $(0,0)$ dobimo 
     \begin{equation*}
         y=r-\sqrt{r^2-x^2}=r-r \sqrt{1-\frac{x^2}{r^2}}=r-r\left(1-\frac{x^2}{2 r^2}+o\left(x^2\right)\right)=\frac{1}{2 r} x^2+o\left(x^2\right).
     \end{equation*}
+    \pause
     Primerjava dobljene enačbe z enačbo razvojem $f$ nam pokaže, da je za $f^{\prime \prime}(0)\neq0$ 
     \begin{equation*}
         r=1 / f^{\prime \prime}(0) \in \mathbb{R} \setminus \{0\}.
     \end{equation*}
+    \pause 
     Taki krožnici pravimo \textcolor{red1}{pritisnjena krožnica}, recipročni vrednosti radija 
     \begin{equation*}
         \kappa=f^{\prime \prime}(0)=1 / r
     \end{equation*}
-    pa \textcolor{red1}{predznačena ukrivljenost} krivulje v $(0,0)$. Njeno absolutno vrednost $|\kappa|=\left|f^{\prime \prime}(0)\right| \geq 0$ imenujemo \textcolor{red1}{ukrivljenost}, $|r|=1 /|\kappa|=1 /\left|f^{\prime \prime}(0)\right|$ pa \textcolor{red1}{krivinski radij}. 
+    pa \textcolor{red1}{predznačena ukrivljenost} krivulje v $(0,0)$. $|\kappa|=\left|f^{\prime \prime}(0)\right| \geq 0$ imenujemo \textcolor{red1}{ukrivljenost}, $|r|=1 /|\kappa|=1 /\left|f^{\prime \prime}(0)\right|$ pa \textcolor{red1}{krivinski radij}. 
 
 \end{frame}
 
 \begin{frame}
     \frametitle{Ukrivljenost ploskev}
 
-    Naj bo $S \subset \mathbb{R}^3$ gladka ploskev. Na ploskvi fiksiramo točko $p \in S$. S togo preslikavo lahko premaknemo $p$ v $(0,0,0)$ in $T_p S$ v $\mathbb{R}^2 \times\{0\}$. Potem lahko $S$ okoli koorinatnega izhodišča izrazimo kot graf oblike 
+    Naj bo $S \subset \mathbb{R}^3$ gladka ploskev. Izberemo točko $p \in S$. S togo preslikavo premaknemo $p$ v $(0,0,0)$ in $T_p S$ v $\mathbb{R}^2 \times\{0\}$. Okoli koorinatnega izhodišča lahko $S$ izrazimo kot graf oblike 
     \begin{equation*}
         z=f(x, y)=\frac{1}{2}\left(f_{x x}(0) x^2+2 f_{x y}(0,0) x y+f_{y y}(0) y^2\right)+o\left(x^2+y^2\right). 
     \end{equation*}
+    \pause 
     Označimo z $A$ Hessjevo matriko funkcije $f$ v točki $(0,0)$:
     \begin{equation*}
         A=\begin{bmatrix}
@@ -337,11 +357,11 @@
             f_{x y}(0,0) & f_{y y}(0,0)
         \end{bmatrix} .
     \end{equation*}
-    Izberemo si zdaj enotski vektor $v=\left(v_1, v_2\right)$ v $(x,y)$ ravnini. S $\Sigma_v$ označimo ravnino skozi koordinatno izhodišče, ki jo razpenjata vektor $v$ in koordinatna os $z$. Presečišče $C_v:=S \cap \Sigma_v$ je krivulja na $S$ parametrizirana z
+    Izberemo enotski vektor $v=\left(v_1, v_2, 0\right)$. S $\Sigma_v$ označimo ravnino z normalo $(0,0,1)\times v$, ki poteka skozi koordinatno izhodišče. Presečišče $C_v:=S \cap \Sigma_v$ je krivulja na $S$ podana z
     \begin{equation*}
         z=f\left(v_1 t, v_2 t\right)=\frac{1}{2}(A v \cdot v) t^2+o\left(t^2\right)
     \end{equation*}
-    za $t \in \mathbb{R}$ blizu $0$. Iz prejšnje drsnice o ukrivljenosti krivulj in dobljene formule vemo, da je 
+    za $t \in \mathbb{R}$ blizu $0$. \pause Iz prejšnje drsnice vemo, da je 
     \begin{equation*}
         \kappa_v=A v \cdot v=f_{x x}(0) v_1^2+2 f_{x y}(0,0) v_1 v_2+f_{y y}(0) v_2^2
     \end{equation*}
@@ -361,7 +381,7 @@
         H=\frac{1}{2}(\kappa_1+\kappa_2)=\frac{1}{2}\operatorname{sl} A, \quad K=\kappa_1 \kappa_2=\operatorname{det} A
     \end{equation*}
     imenujemo \textcolor{red1}{povprečna ukrivljenost} in \textcolor{red1}{Gaussova ukrivljenost} ploskve $S$ v točki $0$. 
-
+    \pause 
     \vspace{0.8em}
 
     Sled matrike $A$ je enaka $\bigtriangleup f(0,0)=f_{x x}(0,0)+f_{y y}(0,0)$. Po drugi strani, pa je sled matrike enaka vsoti njenih lastnih vrednosti. To implicira 
@@ -382,36 +402,38 @@
         \end{equation*}
         natanko tedaj, ko ima njen graf $S=\mathcal{G}_f$ v vsaki točki  ničelno srednjo ukrivljenost. 
     \end{izrek}
-
+    \pause
     \emph{Dokaz:}
 
     Izberimo točko $p_0\in D$. Evklidske koordinate, ki ohranijo $z$ smer izberemo tako, da velja $p_0=(0,0)$, $f(0,0)=0$ in 
     \begin{equation*}
         f(x, y)=a x+O\left(x^2+y^2\right), \quad \text{za }  a \geq 0.    
     \end{equation*}
-    
-    Ekvivalenco iz trditve je zato dovolj dokazati v točki $(0,0)$. Izberimo si naslednjo ortonormirano bazo $\mathbb{R}^3$:
+    \pause 
+    Ekvivalenco iz trditve dokazujemo v točki $(0,0)$. Izberimo si ortonormirano bazo $\mathbb{R}^3$:
     \begin{equation*}
         \mathbf{v}_1=\frac{1}{\sqrt{1+a^2}}(1,0, a), \quad \mathbf{v}_2=(0,1,0), \quad \mathbf{v}_3=\frac{1}{\sqrt{1+a^2}}(-a, 0,1).
     \end{equation*}
-    Vidimo, da $\mathbf{v}_1$ in $\mathbf{v}_2$ razpenjata tangentno $T_0 S$ ravnino v $(0,0)$, $\mathbf{v}_3$ pa je normala na $T_0S$. Označimo z $(u, v, w)$ Evklidske koordinate, ki so vezane na to bazo. 
+    $\mathbf{v}_1$ in $\mathbf{v}_2$ razpenjata tangentno ravnino $T_0 S$, $\mathbf{v}_3$ pa je normala na $T_0S$. Označimo z $(u, v, w)$ Evklidske koordinate, ki so vezane na to bazo. 
      
 \end{frame}
 
 \begin{frame}
     \frametitle{Dokaz Meusnierjevega izreka}
 
-    Torej se prvotne koordinate izrazijo kot 
+    Prvotne koordinate izrazijo kot 
     \begin{equation*}
         (x, y, z)=u \mathbf{v}_1+v \mathbf{v}_2+w \mathbf{v}_3.
     \end{equation*}
-    V koordinatah $(u,v,w)$ je ploskev $S$ na okolici koordinatnega izhodišča podana kot graf oblike
+    V koordinatah $(u,v,w)$ je ploskev $S$ na okolici koordinatnega izhodišča podana kot:
     \begin{equation*}
         w=g(u, v), \quad g(0,0)=0, \quad \mathrm{d} g(0,0)=0.
     \end{equation*}
-    Vemo, da je srednja ukrivljenost $S$ v točki $(0,0)$ enaka $2H=\bigtriangleup g(0,0)$. Za dokončanje dokaza bomo $g$ prevedli na $f$ in izrazili $\mathscr{G}(f)(0,0)$ z $\bigtriangleup g(0,0)$. 
-    
+    \pause 
+    Vemo, da je srednja ukrivljenost $S$ v točki $(0,0)$ enaka $2H=\bigtriangleup g(0,0)$. $g$ bomo prevedli na $f$ in izrazili $\mathscr{G}(f)(0,0)$ z $\bigtriangleup g(0,0)$. 
+    \pause 
     \vspace{0.8em}
+
     V koordinatah $(x, y, z)$ je ploskev $S$ parametrizirana kot 
     \begin{equation*}
         x=\frac{1}{\sqrt{1+a^2}}(u-a g(u, v)), \quad y=v, \quad z=\frac{1}{\sqrt{1+a^2}}(a u+g(u, v)) .
@@ -420,6 +442,7 @@
     \begin{equation*}
         a u+g(u, v)=\sqrt{1+a^2} \cdot f\left(\frac{u-a g(u, v)}{\sqrt{1+a^2}}, v\right) .
     \end{equation*}
+    \pause 
     Ta izraz zdaj dvakrat odvajamo po $u$ in po $v$: 
     \begin{align*}
         g_{u u} & =f_{x x}\left(1-a g_u\right)^2 / \sqrt{1+a^2}+f_x\left(-a g_{u u}\right) \\
@@ -431,7 +454,7 @@
 \begin{frame}
     \frametitle{Dokaz Meusnierjevega izreka}
 
-    Če ovrednotimo druge parcialne odvode pri $(u, v)=(0,0)$, kar se ujema z $(x, y)=(0,0)$ in upoštevamo $f_x(0,0)=a, f_y(0,0)=0, g_u(0,0)=g_v(0,0)=0$ dobimo 
+    Če ovrednotimo druge parcialne odvode pri $(u, v)=(x, y)= (0,0)$ in upoštevamo, da velja $f_x(0,0)=a$, $f_y(0,0)=0$, $g_u(0,0)=g_v(0,0)=0$ dobimo 
     \begin{align*}
         g_{u u}(0,0) & =f_{x x}(0,0) / \sqrt{1+a^2}-a^2 g_{u u}(0,0) \\
         g_{v v}(0,0) & =-a^2 g_{v v}(0,0)+f_{y y}(0,0) \sqrt{1+a^2}
@@ -440,6 +463,7 @@
     \begin{equation*}
         f_{x x}(0,0)={\sqrt{1+a^2}}^3 g_{u u}(0,0), \quad f_{y y}(0,0)=\sqrt{1+a^2} g_{v v}(0,0)
     \end{equation*}
+    \pause 
     Tako pri $(0,0)$ dobimo
     \begin{align*}
         \mathscr{G}(f) & =\left(1+f_y^2\right) f_{x x}-2 f_x f_y f_{x y}+\left(1+f_x^2\right) f_{y y} \\
@@ -447,7 +471,7 @@
         & ={\sqrt{1+a^2}}^3 \bigtriangleup g .
     \end{align*}
     To pokaže, da je $\mathscr{G}(f)(0,0)=0$ natanko tedaj, ko je $\bigtriangleup g(0,0)=2H=0$. \hfill $\square$
-
+    \pause 
     \begin{definicija}
         Gladka ploskev v $\mathbb{R}^3$ je \textcolor{red1}{minimalna}, če je njena povprečna ukrivljenost v vsaki točki ničelna, t.~j.~$\frac{1}{2}(\kappa_1+\kappa_2)=0$.
     \end{definicija}
@@ -463,8 +487,8 @@
                 \begin{tikzpicture}
                     \begin{axis}[
                         view={110}{20},
-                        samples=\samplescalar*1.2,
-                        samples y=\samplescalar*1.2,
+                        samples=\samplescalar,
+                        samples y=\samplescalar,
                         domain=-2:2,
                         y domain=0:4*pi,
                         scale = 1,
@@ -496,17 +520,17 @@
 
         \begin{column}{0.5\textwidth}
             Meusnier je leta 1776 dokazal, da je helikoid minimalna ploskev. 
-            
+            \pause 
             \vspace{0.8em}
 
-            Dobimo ga tako, da premico v $\mathbb{R}^2$ vrtimo in jo hkrati dvigujemo v smeri osi vrtenja. V kartezičnih koordinatah je podan kot
+            Dobimo ga tako, da premico v $\mathbb{R}^2$ vrtimo in jo hkrati dvigujemo v smeri osi vrtenja. Torej:
             \begin{align*}
                 & x=\rho \cos (\theta), \\
                 & y=\rho \sin (\theta), \\
                 & z=\theta,
             \end{align*}
             za $\rho$ in $\theta$ od $-\infty$ do $\infty$.
-
+            \pause 
             \vspace{0.8em}
             
             Poleg ravnine je to edina minimalna ploskev, ki jo lahko predstavimo kot unijo premic. Take ploskve imenujemo \textcolor{red1}{premonosne plokve}.
@@ -519,7 +543,7 @@
     \frametitle{Scherkova ploskev - 1835}
 
     Heinrich Scherk leta 1835 odkrije 2 novi minimalni ploskvi. Prve nove odkrite minimalne ploskve po helikoidu.
-
+    \pause
     \vspace{0.8em}
 
     \begin{columns}
@@ -562,10 +586,11 @@
         \end{column}
 
         \begin{column}{0.5\textwidth}
-            Prva Scherkova ploskev je invariantna pod dvema ortogonalnima translacijama, torej je dvojno preiodična. Njena glavna veja je graf nad kvadratom $P=\left(-\frac{\pi}{2}, +\frac{\pi}{2}\right)^2$, podana kot
+            Prva Scherkova ploskev je dvojno preiodična. Njena glavna veja je podana kot graf nad kvadratom $P=\left(-\frac{\pi}{2}, +\frac{\pi}{2}\right)^2$:
             \begin{equation*}
-                z = \ln{\cos{y}} - \ln{\cos{x}}
+                z = \ln{\cos{y}} - \ln{\cos{x}}.
             \end{equation*}
+            \pause
             Ta Scherkova ploskev ima največjo Gaussovo ukrivljenost v $0\in \mathbb{R}^3$ izmed vseh minimalnih grafov, ki ležijo nad kvadratom $P$, in sicer $-1$. 
 
             \vspace{0.8em}
@@ -634,7 +659,7 @@
             
         \end{column}
     \end{columns}
-
+    \pause
     \textcolor{red1}{Torej, če hočemo, da graf minimalne ploskve obstaja nad določeno domeno, potem ne mora biti poljubno ukrivljen.} 
     
     \vspace{0.8em}
@@ -656,8 +681,8 @@
         \end{column}
 
         \begin{column}{0.6\textwidth}
-            Proti koncu svojega življenja je Bernhard Riemann odkril družino enoparametričnih minimalnih ploskev $R_\lambda$ za $\lambda \in (0, \infty)$. Parametrizirane so s periodičnimi ravninskimi domenami. Vsaka horizontalna ravnina se s ploskvijo seka v premici ali pa krožnici. 
-            
+            Bernhard Riemann odkrije družino enoparametričnih minimalnih ploskev $R_\lambda$ za $\lambda \in (0, \infty)$. Parametrizirane so s periodičnimi ravninskimi domenami. Horizontalne ravnine se s ploskvijo sekajo v premici ali pa krožnici. 
+            \pause
             \vspace{0.8em}
 
             Ko pošljemo $\lambda \rightarrow 0$ te ploskve konvergirajo h katenoidi, če pa pošlejmo $\lambda \rightarrow \infty$ konvergirajo h helikoidu.         \end{column}
@@ -705,7 +730,7 @@
         \end{column}
 
         \begin{column}{0.5\textwidth}
-            \textcolor{red1}{Neorientabilna minimalna ploskev}. Do 1981 edina poznana neorientabilna minimlana ploskev. Podana je kot
+            Do 1981 edina poznana \textcolor{red1}{neorientabilna minimalna ploskev}. Podana je kot
             \begin{align*}
                 x & =2 \cos (v) \sinh (u)-\frac{2}{3} \cos (3 v) \sinh (3 u), \\
                 y & =2 \sin (v) \sinh (u)+\frac{2}{3} \sin (3 v) \sinh (3 u), \\
@@ -724,11 +749,13 @@
     \begin{definicija}[Imerzija]
         Preslikava $F: D \rightarrow \mathbb{R}^n$ $(n \geq 2)$ razreda $\mathscr{C}^1$ je \textcolor{red1}{imerzija}, če sta parcialna odvoda $F_u=\partial F / \partial u$ in $F_v=\partial F / \partial v$ linearno neodvisna v vsaki točki $D$. 
     \end{definicija}
-    Naj bo $F: \overline{D} \rightarrow \mathbb{R}^n$ gladka imerzija. Predpostavimo, da lahko koordinate $(u,v)$ izberemo tako, da je $F$ \textcolor{red1}{konformna preslikava}. To pomeni, da bo zanjo veljalo
-    \begin{equation*}
-        \left|F_u\right|=\left|F_v\right| , \quad F_u \cdot F_v=0.
-    \end{equation*}
-    Ta predpostavka sledi iz obstoja izotermalnih koordinat, kar bomo utemeljili kasneje. Poglejmo si spet \textcolor{red1}{ploščinski funkcional}, ki ga lahko zapišemo kot
+    \pause 
+    Naj bo $F: \overline{D} \rightarrow \mathbb{R}^n$ gladka imerzija. Predpostavimo, da lahko koordinate $(u,v)$ izberemo tako, da je $F$ \textcolor{red1}{konformna preslikava} $\Leftrightarrow \left|F_u\right|=\left|F_v\right|$, $F_u \cdot F_v=0$. Ta predpostavka sledi iz obstoja izotermalnih koordinat, kar bomo utemeljili kasneje. 
+    \pause
+    \vspace{0.8em} 
+    
+    Gradient imerzije $\nabla F=\left(F_u, F_v\right)$ predstavlja $n \times 2$ matrika. Velja $|\nabla F|^2=\left|F_u\right|^2+\left|F_v\right|^2$. 
+    Poglejmo si spet \textcolor{red1}{ploščinski funkcional}, ki ga lahko zapišemo kot
     \begin{equation*}
         \operatorname{Area}(F)=\iint_D\left|F_u \times F_v\right| \, \mathrm{d} u \mathrm{d} v=\iint_D \sqrt{\left|F_u\right|^2\left|F_v\right|^2-\left|F_u \cdot F_v\right|^2} \, \mathrm{d} u \mathrm{d} v
     \end{equation*}
@@ -736,6 +763,7 @@
     \begin{equation*}
         \mathscr{D}(F)=\frac{1}{2} \iint_D|\nabla F|^2 \, \mathrm{d} u \mathrm{d} v=\frac{1}{2} \iint_D\left(\left|F_u\right|^2+\left|F_v\right|^2\right) \, \mathrm{d} u \mathrm{d} v
     \end{equation*}
+    \pause
     Iz neenakosti 
     \begin{equation*}
         |x|^2|y|^2-|x \cdot y|^2 \leq|x|^2|y|^2 \leq \frac{1}{4}\left(|x|^2+|y|^2\right)^2, \quad \text{za }x, y \in \mathbb{R}^n         
@@ -748,7 +776,7 @@
     \frametitle{Konformna imerzija je minimalna natanko tedaj, ko je harmonična}
 
     Torej imata funkcionala $\operatorname{Area}$ in $\mathscr{D}$ \textcolor{red1}{iste stacionarne točke na množici konformnih imerzij}.
-
+    \pause
     \vspace{0.8em}
 
     Izračunajmo prvo variacijo funkcionala $\mathscr{D}$. Če je $h: \overline{D} \rightarrow \mathbb{R}^n$ gladka preslikava, za katero velja $h(bD)\equiv 0$, potem po uporabi prve Greenove identitete v zadnjem enačaju dobimo
@@ -757,7 +785,9 @@
         &=\iint_D \nabla F \cdot \nabla h \, \mathrm{d} u \mathrm{d} v \\
         &=-\iint_D \operatorname{div}(\nabla F) \cdot h \, \mathrm{d} u \mathrm{d} v.
     \end{align*}
-    Ta izraz je enak $0$ za poljuben $h$ natanko tedaj, ko je $\operatorname{div}(\nabla F)= \bigtriangleup X \equiv 0$. S tem smo dokazali naslednji izrek.
+    \pause 
+    Ta izraz je enak $0$ za poljuben $h$ natanko tedaj, ko je $\operatorname{div}(\nabla F) \equiv 0$. Pravimo, da je imerzija $F=\left(F_1, F_2, \ldots, F_n\right)$ \textcolor{red1}{harmonična} če velja $\bigtriangleup F=\left(\bigtriangleup F_1, \bigtriangleup F_2, \ldots, \bigtriangleup F_n\right)= (0,0,\ldots 0)$. S tem smo dokazali naslednji izrek.
+    \pause
     \begin{izrek}
         Konformna imerzija $F: D \rightarrow \mathbb{R}^n$ $(n \geq 3)$ razreda $\mathscr{C}^2$ je stacionarna točka ploščinskega funkcionala natanko tedaj, ko je $F$ harmonična.
     \end{izrek}
@@ -783,57 +813,83 @@
 %     To je \textcolor{red1}{formula za prvo variacijo ploščine} imerzije ploskve. Pove nam, da je \textcolor{red1}{vektorsko polje} $\bigtriangleup_g X$ \textcolor{red1}{negativen gradient ploščinskega funkcionala v} $F$.  
 % 
 % \end{frame}
+% 
+% \begin{frame}
+%     \frametitle{Izotermalne koordinate}
+% 
+%     Naj bo $M$ gladka ploskev in $F: M \rightarrow \mathbb{R}^n$ gladka imerzija. $F$ na $M$ določi \textcolor{red1}{Riemannovo metriko} $g=\left|F_u\right|^2 \mathrm{d} u^2+\left(F_u \cdot F_v\right)(\mathrm{d} u \mathrm{d} v+\mathrm{d} v \mathrm{d} u)+\left|F_v\right|^2 \mathrm{d} v^2$. Za vsako točko $p \in M$ obstaja okolica $U \subset M$ s koordinatami $(\tilde{u}, \tilde{v})$ v katerih Riemannova metrika $g$ dobi enostavnejšo obliko 
+%     \begin{equation*}
+%         g=\lambda(u,v)\left(\mathrm{d} \tilde{u}^2+\mathrm{d} \tilde{v}^2\right) \quad \text{za } \lambda(u,v) > 0.
+%     \end{equation*}
+%     Vsakim takim koordinatam $(\tilde{u}, \tilde{v})$ pravimo \textcolor{red1}{izotermalne koordinate} za Riemannovo metriko $g$. Naj bo $\widetilde{F}=\widetilde{F}(\tilde{u}, \tilde{v})$ imerzija $U \rightarrow \mathbb{R}^n$, ki jo dobimo iz $F$, če $(u, v)$ izrazimo z $(\tilde{u}, \tilde{v})$. Velja 
+%     \begin{equation*}
+%         \left|\widetilde{F}_{\tilde{u}}\right|^2=\left|\widetilde{F}_{\tilde{v}}\right|^2=\lambda, \quad \widetilde{F}_{\tilde{u}} \cdot \widetilde{F}_{\tilde{v}}=0,
+%     \end{equation*}
+%     kar pomeni, da je $\widetilde{F}: U \rightarrow \mathbb{R}^n$ konformna imerzija. Obstoj izotermalnih koordinat je odkril C.~F.~Gauss za rotacijske ploskve. Splošnega dokaza ne bomo navajli.
+% 
+%     \vspace{0.8em}
+% 
+%     Izotermalne koordinate vedno obstajajo, vendar le lokalno. Kaj pa \textcolor{red1}{globalna situacija}? Po tem, kar smo povedali zgoraj vemo, da obstaja odprta povezana okolica $U_i\subset M$ točke $p$, ki jo lahko parametriziramo z gladkim difeomorfizmom $\phi_i^{-1}: V_i\subset \mathbb{R}^2 \rightarrow U_i$, tako da je $F \circ \phi_i^{-1}: V_i \rightarrow \mathbb{R}^n$ konformna vložitev. Če je $\phi_j^{-1}:V_j\subset \mathbb{R}^2 \rightarrow U_j$, $i\neq j$, še ena taka lokalna parametrizacija dela ploskve $U_j\subset M$, kjer velja $U_{ij}=U_i\cap U_j \neq \emptyset$, potem je \textcolor{red1}{prehodna preslikava} $\phi_{ij}=\phi_j \circ \phi_i^{-1}: \phi_i\left(U_{i j}\right) \rightarrow \phi_j\left(U_{i j}\right)$ konformni difeomorfizem med ravninskima domenama. Če $\mathbb{R}^2$ identificiramo s kompleksno ravnino $\mathbb{C}$, vemo, da so konformni difeomorfizmi med pari povezanih odprtih domen v $\mathbb{C}$ ali biholomorfni ali pa antibiholomorfni, glede na to, če ohranijo orientacijo. 
+%     
+% \end{frame}
+% 
+% \begin{frame}
+%     \frametitle{Konformne parametrizacije z Riemannovimi ploskvami}
+% 
+%     Paru $\left(U_i, \phi_i\right)$, kjer je $U_i \subset M$ in $\phi_i$ lokalna parametrizacija pravimo \textcolor{red1}{lokalna karta} na $M$. Zbirki vseh lokalnih kart, ki pokrijejo $M$, t.~j.~$\mathcal{U}=\left\{\left(U_i, \phi_i\right) \mid i \in I\right\}$, kjer je $\left\{U_i\right\}_{i \in I}$ odprto pokritje $M$, pravimo \textcolor{red1}{atlas}. Če so prehodne preslikave $\phi_{ij}$ konfromne atlasu $\mathcal{U}$ pravimo \textcolor{red1}{konformna struktura} na $M$. Ploskev $M$, opremljena s konformno strukturo je \textcolor{red1}{konformna ploskev}. Če je $M$ orientabilna in v konformnem atlasu izberemo za prehodne preslikave $\phi_i$ biholomorfne funkcije, dobimo \textcolor{red1}{Riemannovo ploskev} $(M, \mathcal{U})$. 
+%     
+%     \vspace{0.8em}
+% 
+%     Za konformno ploskev $M$ je princip konformne imerzije $M \rightarrow \mathbb{R}^n$ dobro definiran, če nanjo gledamo v lokalnih koordinatah, določenih s konformnim atlasom. Tudi definicija harmonične funkcije je dobra v lokalnih koordinatah.
+%     \begin{posledica}
+%         Vsako minimalno ploskev v $\mathbb{R}^n$ lahko parametriziramo s konformno harmonično preslikavo iz Riemannove oz.~konformne ploskve. Natančneje, konformna imerzija $M\rightarrow \mathbb{R}^n$ parametrizira minimalno ploskev natanko tedaj, ko je harmonična preslikava.
+%     \end{posledica}
+%     Glavna ugotovitev je, da so naravne izvorne ploskve, ki jih je smiselno upoštevati (pri parametrizaciji minimalnih ploskev) Riemannove ploskve v orientabilnem primeru in konformne ploskve v neorientabilnem primeru. 
+%     
+% \end{frame}
 
 \begin{frame}
     \frametitle{Izotermalne koordinate}
 
-    Naj bo $M$ gladka ploskev in $F: M \rightarrow \mathbb{R}^n$ gladka imerzija. $F$ na $M$ določi \textcolor{red1}{Riemannovo metriko} $g=\left|F_u\right|^2 \mathrm{d} u^2+\left(F_u \cdot F_v\right)(\mathrm{d} u \mathrm{d} v+\mathrm{d} v \mathrm{d} u)+\left|F_v\right|^2 \mathrm{d} v^2$. Za vsako točko $p \in M$ obstaja okolica $U \subset M$ s koordinatami $(\tilde{u}, \tilde{v})$ v katerih Riemannova metrika $g$ dobi enostavnejšo obliko 
+    Naj bo $F: D \rightarrow \mathbb{R}^n$ gladka imerzija in naj bo $\mathrm{d} s^2=\mathrm{d} x_1^2+\cdots+\mathrm{d} x_n^2$ Evklidska metrika na $\mathbb{R}^n$. $F$ na $M$ določi \textcolor{red1}{Riemannovo metriko} 
+    \begin{equation*}
+        g=\left|F_u\right|^2 \mathrm{d} u^2+\left(F_u \cdot F_v\right)(\mathrm{d} u \mathrm{d} v+\mathrm{d} v \mathrm{d} u)+\left|F_v\right|^2 \mathrm{d} v^2.
+    \end{equation*}
+    \pause
+    Za vsako točko $p \in D$ obstaja okolica $U \subset D$ s koordinatami $(\tilde{u}, \tilde{v})$, da velja 
     \begin{equation*}
         g=\lambda(u,v)\left(\mathrm{d} \tilde{u}^2+\mathrm{d} \tilde{v}^2\right) \quad \text{za } \lambda(u,v) > 0.
     \end{equation*}
-    Vsakim takim koordinatam $(\tilde{u}, \tilde{v})$ pravimo \textcolor{red1}{izotermalne koordinate} za Riemannovo metriko $g$. Naj bo $\widetilde{F}=\widetilde{F}(\tilde{u}, \tilde{v})$ imerzija $U \rightarrow \mathbb{R}^n$, ki jo dobimo iz $F$, če $(u, v)$ izrazimo z $(\tilde{u}, \tilde{v})$. Velja 
+    Vsakim takim koordinatam $(\tilde{u}, \tilde{v})$ pravimo \textcolor{red1}{izotermalne koordinate}. \pause Naj bo $\widetilde{F}=\widetilde{F}(\tilde{u}, \tilde{v})$ imerzija $U \rightarrow \mathbb{R}^n$, ki jo dobimo iz $F$, če $(u, v)$ izrazimo z $(\tilde{u}, \tilde{v})$. Velja 
     \begin{equation*}
         \left|\widetilde{F}_{\tilde{u}}\right|^2=\left|\widetilde{F}_{\tilde{v}}\right|^2=\lambda, \quad \widetilde{F}_{\tilde{u}} \cdot \widetilde{F}_{\tilde{v}}=0,
     \end{equation*}
     kar pomeni, da je $\widetilde{F}: U \rightarrow \mathbb{R}^n$ konformna imerzija. Obstoj izotermalnih koordinat je odkril C.~F.~Gauss za rotacijske ploskve. Splošnega dokaza ne bomo navajli.
-
+    \pause 
     \vspace{0.8em}
 
-    Izotermalne koordinate vedno obstajajo, vendar le lokalno. Kaj pa \textcolor{red1}{globalna situacija}? Po tem, kar smo povedali zgoraj vemo, da obstaja odprta povezana okolica $U_i\subset M$ točke $p$, ki jo lahko parametriziramo z gladkim difeomorfizmom $\phi_i^{-1}: V_i\subset \mathbb{R}^2 \rightarrow U_i$, tako da je $F \circ \phi_i^{-1}: V_i \rightarrow \mathbb{R}^n$ konformna vložitev. Če je $\phi_j^{-1}:V_j\subset \mathbb{R}^2 \rightarrow U_j$, $i\neq j$, še ena taka lokalna parametrizacija dela ploskve $U_j\subset M$, kjer velja $U_{ij}=U_i\cap U_j \neq \emptyset$, potem je \textcolor{red1}{prehodna preslikava} $\phi_{ij}=\phi_j \circ \phi_i^{-1}: \phi_i\left(U_{i j}\right) \rightarrow \phi_j\left(U_{i j}\right)$ konformni difeomorfizem med ravninskima domenama. Če $\mathbb{R}^2$ identificiramo s kompleksno ravnino $\mathbb{C}$, vemo, da so konformni difeomorfizmi med pari povezanih odprtih domen v $\mathbb{C}$ ali biholomorfni ali pa antibiholomorfni, glede na to, če ohranijo orientacijo. 
-    
-\end{frame}
-
-\begin{frame}
-    \frametitle{Konformne parametrizacije z Riemannovimi ploskvami}
-
-    Paru $\left(U_i, \phi_i\right)$, kjer je $U_i \subset M$ in $\phi_i$ lokalna parametrizacija pravimo \textcolor{red1}{lokalna karta} na $M$. Zbirki vseh lokalnih kart, ki pokrijejo $M$, t.~j.~$\mathcal{U}=\left\{\left(U_i, \phi_i\right) \mid i \in I\right\}$, kjer je $\left\{U_i\right\}_{i \in I}$ odprto pokritje $M$, pravimo \textcolor{red1}{atlas}. Če so prehodne preslikave $\phi_{ij}$ konfromne atlasu $\mathcal{U}$ pravimo \textcolor{red1}{konformna struktura} na $M$. Ploskev $M$, opremljena s konformno strukturo je \textcolor{red1}{konformna ploskev}. Če je $M$ orientabilna in v konformnem atlasu izberemo za prehodne preslikave $\phi_i$ biholomorfne funkcije, dobimo \textcolor{red1}{Riemannovo ploskev} $(M, \mathcal{U})$. 
-    
-    \vspace{0.8em}
-
-    Za konformno ploskev $M$ je princip konformne imerzije $M \rightarrow \mathbb{R}^n$ dobro definiran, če nanjo gledamo v lokalnih koordinatah, določenih s konformnim atlasom. Tudi definicija harmonične funkcije je dobra v lokalnih koordinatah.
-    \begin{posledica}
-        Vsako minimalno ploskev v $\mathbb{R}^n$ lahko parametriziramo s konformno harmonično preslikavo iz Riemannove oz.~konformne ploskve. Natančneje, konformna imerzija $M\rightarrow \mathbb{R}^n$ parametrizira minimalno ploskev natanko tedaj, ko je harmonična preslikava.
-    \end{posledica}
-    Glavna ugotovitev je, da so naravne izvorne ploskve, ki jih je smiselno upoštevati (pri parametrizaciji minimalnih ploskev) Riemannove ploskve v orientabilnem primeru in konformne ploskve v neorientabilnem primeru. 
+    Lokalne izotermalne koordinate vedno obstajajo. \textcolor{red1}{Globalna situacija} je bolj zapletena. 
     
 \end{frame}
 
 \begin{frame}
     \frametitle{Povezava s kompleksno analizo}
 
-    Naj bo $z=u+\mathfrak{i} v$ kompleksna spremenljivka na $\mathbb{C}$. Iz kompleksne analize se spomnimo dveh operatorjev, imenovanih \textcolor{red1}{Wirtingerjeva odvoda}, ki sta definirana kot
+    Naj bo $z=u+\mathfrak{i} v$ kompleksna spremenljivka na $\mathbb{C}$. \textcolor{red1}{Wirtingerjeva odvoda} definiramo kot:
     \begin{equation*}
         \frac{\partial}{\partial z}=\frac{1}{2}\left(\frac{\partial}{\partial u}-\mathfrak{i} \frac{\partial}{\partial v}\right), \quad \frac{\partial}{\partial \bar{z}}=\frac{1}{2}\left(\frac{\partial}{\partial u}+\mathfrak{i} \frac{\partial}{\partial v}\right).
     \end{equation*}
-    Jedro $\frac{\partial}{\partial \bar{z}}$ sestavljajo holomorfne funkcije, jedro $\frac{\partial}{\partial z}$ pa antiholomorfne funkcije. Glede na tedva operatorja, se Laplaceov opertor izrazi kot 
+    Jedro $\frac{\partial}{\partial \bar{z}}$ sestavljajo holomorfne funkcije, jedro $\frac{\partial}{\partial z}$ pa antiholomorfne funkcije. \pause Laplaceov opertor se izrazi kot 
     \begin{equation*}
         \bigtriangleup=\frac{\partial^2}{\partial u^2}+\frac{\partial^2}{\partial v^2}=4 \frac{\partial}{\partial \bar{z}} \frac{\partial}{\partial z}=4 \frac{\partial}{\partial z} \frac{\partial}{\partial \bar{z}} .
     \end{equation*} 
-    Vidimo, da je preslikava $X=(X_1, X_2, \ldots, X_n): D \rightarrow \mathbb{R}^n$ harmonična natanko tedaj, ko je preslikava $x=\left(x_1, x_2, \ldots, x_n\right): D \rightarrow \mathbb{C}^n$ s komponentami $x_j=\partial X_j / \partial z$ za $j=1,2, \ldots, n$ holomorfna in fukcije $x_j$ nimajo skupne ničle. Poleg tega je konformnost $X$ ekvivalentna naslednjemu pogoju
+    \pause
+    Preslikava $X=(X_1, X_2, \ldots, X_n): D \rightarrow \mathbb{R}^n$ je harmonična natanko tedaj, ko je preslikava $x=\left(x_1, x_2, \ldots, x_n\right): D \rightarrow \mathbb{C}^n$ s komponentami $x_j=\partial X_j / \partial z$ za $j=1,2, \ldots, n$ holomorfna in fukcije $x_j$ nimajo skupne ničle. Poleg tega je konformnost $X$ ekvivalentna naslednjemu pogoju
     \begin{equation*}
         \left| X_u \right|^2 = \left| X_v \right|^2, \, X_u\cdot X_v=0 \iff \sum_{k=1}^n x_k^2 = 0 \quad \text{na }D.
     \end{equation*}
-    Analogen rezultat velja tudi, če $D$ poljubna \textcolor{red1}{odprta Riemannova ploskev}. Videli smo že, da vsaka imerzija orientabilne ploskve v $\mathbb{R}^n$ premore konformno parametrizacijo z Riemannove ploskve. 
+
+    % Analogen rezultat velja tudi, če $D$ poljubna \textcolor{red1}{odprta Riemannova ploskev}. Videli smo že, da vsaka imerzija orientabilne ploskve v $\mathbb{R}^n$ premore konformno parametrizacijo z Riemannove ploskve. 
 
 \end{frame}
 
@@ -845,11 +901,12 @@
         \begin{equation*}
             x=\left(x_1, x_2, \ldots, x_n\right): D \rightarrow \mathbb{C}^n \setminus \{0\} \quad \text{holomorfna in velja} \quad  \sum_{k=1}^n x_k^2=0.
         \end{equation*}
-        Po drugi strani pa preslikava $x=\left(x_1, x_2, \ldots, x_n\right): D \rightarrow \mathbb{C}_*^n=\mathbb{C}^n \setminus\{0\}$, ki zadošča pogoju $\sum_{k=1}^nx_k^2=0$ in ima ničelno periodo
+        \pause 
+        Po drugi strani pa holomorfna preslikava $x=\left(x_1, x_2, \ldots, x_n\right): D \rightarrow \mathbb{C}_*^n=\mathbb{C}^n \setminus\{0\}$, ki zadošča pogoju $\sum_{k=1}^nx_k^2=0$ in ima ničelno periodo, t.~j.~
         \begin{equation*}
             \Re \oint_C x \, \mathrm{d} z=0 \quad \text{za vsako sklenjeno krivuljo } C \subset D
         \end{equation*}
-        določi konformno minimalno imerzijo $X: D \rightarrow \mathbb{R}^n$, podano s 
+        določi konformno minimalno imerzijo $X: D \rightarrow \mathbb{R}^n$, podano z 
         \begin{equation*}
             X(z)=c+\Re \int_{z_0}^z x(\zeta) \, \mathrm{d} \zeta, \quad z \in D
         \end{equation*}
@@ -859,57 +916,74 @@
     
 \end{frame}
 
+% \begin{frame}
+%     \frametitle{Prva homološka grupa in homološki razred}
+% 
+%     Definirajmo še en topološki pojem. Naj bo $M$ Riemannova ploskev in $x_0 \in M$. Gledamo sklenjene krivulje na $M$, ki gredo skozi izbrano točko, natančneje, zvezne preslikave 
+%     \begin{equation*}
+%         \gamma:[0,1] \rightarrow M, \quad \gamma(0)=\gamma(1)=x_0.
+%     \end{equation*}
+%     Označimo množico vseh takih krivulj z $\Gamma\left(x_0\right)$ in na njej vpeljimo ekvivalenčno relacijo $\sim$ na naslednji način: $\gamma_1 \sim \gamma_2 \Leftrightarrow$ obstaja zvezna preslikava $H:[0,1] \times[0,1] \rightarrow M$, ki zadošča:
+%     \begin{itemize}
+%       \item $H(0, s)=H(1, s)=x_0$ za vse $s \in[0,1]$,
+%       \item $H(t, 0)=\gamma_1(t)$ in $H(t, 1)=\gamma_2(t)$ za vse $t \in[0,1]$. 
+%     \end{itemize}
+%     Preslikavo $H$ imenujemo \textcolor{red1}{homotopija}, krivulji, ki premoreta homotopijo pa \textcolor{red1}{homotopsko ekvivalentni}. Kvocientno množico $\Gamma\left(x_0\right) /_{\sim}=\pi_1\left(M, x_0\right)$ opremimo z operacijo lepljenja $\gamma_1 * \gamma_2:[0,1] \rightarrow M$:
+%     \begin{equation*}
+%         \left(\gamma_0 * \gamma_1\right)(t)= \begin{cases}\gamma_1(2 t) &; 0 \leq t \leq \frac{1}{2} \\ \gamma_2(2 t-1) &; \frac{1}{2} \leq t \leq 1\end{cases}.
+%     \end{equation*}
+%     Dobljeno grupo $\pi_1\left(M, x_0\right)$ imenujemo \textcolor{red1}{prva fundamentalna grupa} $M$ glede na $x_0$, njeno abelacijo $H_1(M, \mathbb{Z})$ pa \textcolor{red1}{prva homološka grupa} $M$ \textcolor{red1}{s celimi koeficienti}.
+% 
+%     \vspace{0.8em}
+% 
+%     Naj bo $D\subset \mathbb{C}$ omejena povezana domena. \textcolor{red1}{Homološki razred} v $H_1(D, \mathbb{Z})$ predstavlja ekvivalenčni razred sklenjenih zank v domeni $D$, kjer sta dve zanki \textcolor{red1}{homologni}, če \emph{skupaj} tvorita rob neke ploskve, ki leži znotraj $D$. Intuitivno to pomeni, da zanemarimo lokalne deformacije in nas zanima le, kolikokrat in v katero smer se zanka ovije okoli posameznih \textcolor{red1}{lukenj} v domeni, kjer luknje definiramo kot omejene povezane komponente komplementa $\mathbb{C} \setminus D$. 
+% 
+% \end{frame}
+
+% \begin{frame}
+%     \frametitle{Generatorji, homološka baza in ničelna kvadrika}
+% 
+%     Če je $D \subset \mathbb{C}$, tako kot prej, omejena povezana domena, katere rob $b D$ je sestavljen iz $l_1$ Jordanovih krivulj ter $l_2$ izoliranih točk, potem je prva homološka grupa $H_1(D, \mathbb{Z}) \cong\mathbb{Z}^\ell$, kjer $\ell = l_1 + l_2 - 1$. \textcolor{red1}{Generatorji} te proste abelove grupe so homološki razredi zank, ki obkrožajo posamezne luknje v $D$. Vsaka taka luknja prispeva po en generator. Če ima $D$ eno luknjo, potem je $H_1(D, \mathbb{Z}) \cong \mathbb{Z}$, homološki razred zanke pa je določen z enim celim številom - številom ovitij okoli luknje. \textcolor{red1}{Homološka baza} je množica krivulj $\left\{\gamma_1, \ldots, \gamma_{\ell}\right\} \subset D$, kjer velja, da so homološki razredi $\left[\gamma_1\right], \ldots,\left[\gamma_{\ell}\right]$ medseboj linearno neodvisni ter da lahko vsak drug homološki razred zapišemo kot $[\gamma]=n_1\left[\gamma_1\right]*\cdots*n_{\ell}\left[\gamma_{\ell}\right]$,  za $n_i \in \mathbb{Z}$.
+%     
+%     \vspace{0.8em}
+% 
+%     Definirajmo \textcolor{red1}{ničelno kvadriko} 
+%     \begin{equation*}
+%         \mathbb{A}=\mathbb{A}^{n-1}=\left\{z=\left(z_1, \ldots, z_n\right) \in \mathbb{C}^n \mid z_1^2+z_2^2+\cdots+z_n^2=0\right\}.    
+%     \end{equation*}
+%     Iz formulacije Weierstrass-Enneperjevega reprezentacijskega izreka je očitno, da ničelna kvadrika igra ključno vlogo v teoriji minimalnih ploskev. Če ji odstarnimo izhodišče dobimo \textcolor{red1}{punktriano ničelno kvadriko} $\mathbb{A}_*=\mathbb{A} \setminus \{0\}$. 
+%     
+%     \vspace{0.8em}
+%     
+%     Vse konformne minimalne ploskve $D \rightarrow \mathbb{R}^n$ dobimo kot integrale holomorfnih preslikav $f: D \rightarrow \mathbb{A}_* \subset \mathbb{C}^n$, ki zadostujejo pogoju za ničelno periodnost. Ker je $f$ holomorfna, je dovolj da pogoj za ničelno periodnost preverimo na homološki bazi $H_1(D, \mathbb{Z})$. Če je $D$ enostavno povezano območje je pogoj izpolnjen na prazno. 
+%     
+% \end{frame}
+
 \begin{frame}
-    \frametitle{Prva homološka grupa in homološki razred}
-
-    Definirajmo še en topološki pojem. Naj bo $M$ Riemannova ploskev in $x_0 \in M$. Gledamo sklenjene krivulje na $M$, ki gredo skozi izbrano točko, natančneje, zvezne preslikave 
-    \begin{equation*}
-        \gamma:[0,1] \rightarrow M, \quad \gamma(0)=\gamma(1)=x_0.
-    \end{equation*}
-    Označimo množico vseh takih krivulj z $\Gamma\left(x_0\right)$ in na njej vpeljimo ekvivalenčno relacijo $\sim$ na naslednji način: $\gamma_1 \sim \gamma_2 \Leftrightarrow$ obstaja zvezna preslikava $H:[0,1] \times[0,1] \rightarrow M$, ki zadošča:
-    \begin{itemize}
-      \item $H(0, s)=H(1, s)=x_0$ za vse $s \in[0,1]$,
-      \item $H(t, 0)=\gamma_1(t)$ in $H(t, 1)=\gamma_2(t)$ za vse $t \in[0,1]$. 
-    \end{itemize}
-    Preslikavo $H$ imenujemo \textcolor{red1}{homotopija}, krivulji, ki premoreta homotopijo pa \textcolor{red1}{homotopsko ekvivalentni}. Kvocientno množico $\Gamma\left(x_0\right) /_{\sim}=\pi_1\left(M, x_0\right)$ opremimo z operacijo lepljenja $\gamma_1 * \gamma_2:[0,1] \rightarrow M$:
-    \begin{equation*}
-        \left(\gamma_0 * \gamma_1\right)(t)= \begin{cases}\gamma_1(2 t) &; 0 \leq t \leq \frac{1}{2} \\ \gamma_2(2 t-1) &; \frac{1}{2} \leq t \leq 1\end{cases}.
-    \end{equation*}
-    Dobljeno grupo $\pi_1\left(M, x_0\right)$ imenujemo \textcolor{red1}{prva fundamentalna grupa} $M$ glede na $x_0$, njeno abelacijo $H_1(M, \mathbb{Z})$ pa \textcolor{red1}{prva homološka grupa} $M$ \textcolor{red1}{s celimi koeficienti}.
-
-    \vspace{0.8em}
-
-    Naj bo $D\subset \mathbb{C}$ omejena povezana domena. \textcolor{red1}{Homološki razred} v $H_1(D, \mathbb{Z})$ predstavlja ekvivalenčni razred sklenjenih zank v domeni $D$, kjer sta dve zanki \textcolor{red1}{homologni}, če \emph{skupaj} tvorita rob neke ploskve, ki leži znotraj $D$. Intuitivno to pomeni, da zanemarimo lokalne deformacije in nas zanima le, kolikokrat in v katero smer se zanka ovije okoli posameznih \textcolor{red1}{lukenj} v domeni, kjer luknje definiramo kot omejene povezane komponente komplementa $\mathbb{C} \setminus D$. 
-
-\end{frame}
-
-\begin{frame}
-    \frametitle{Generatorji, homološka baza in ničelna kvadrika}
-
-    Če je $D \subset \mathbb{C}$, tako kot prej, omejena povezana domena, katere rob $b D$ je sestavljen iz $l_1$ Jordanovih krivulj ter $l_2$ izoliranih točk, potem je prva homološka grupa $H_1(D, \mathbb{Z}) \cong\mathbb{Z}^\ell$, kjer $\ell = l_1 + l_2 - 1$. \textcolor{red1}{Generatorji} te proste abelove grupe so homološki razredi zank, ki obkrožajo posamezne luknje v $D$. Vsaka taka luknja prispeva po en generator. Če ima $D$ eno luknjo, potem je $H_1(D, \mathbb{Z}) \cong \mathbb{Z}$, homološki razred zanke pa je določen z enim celim številom - številom ovitij okoli luknje. \textcolor{red1}{Homološka baza} je množica krivulj $\left\{\gamma_1, \ldots, \gamma_{\ell}\right\} \subset D$, kjer velja, da so homološki razredi $\left[\gamma_1\right], \ldots,\left[\gamma_{\ell}\right]$ medseboj linearno neodvisni ter da lahko vsak drug homološki razred zapišemo kot $[\gamma]=n_1\left[\gamma_1\right]*\cdots*n_{\ell}\left[\gamma_{\ell}\right]$,  za $n_i \in \mathbb{Z}$.
-    
-    \vspace{0.8em}
+    \frametitle{Ničelna kvadrika}
 
     Definirajmo \textcolor{red1}{ničelno kvadriko} 
     \begin{equation*}
         \mathbb{A}=\mathbb{A}^{n-1}=\left\{z=\left(z_1, \ldots, z_n\right) \in \mathbb{C}^n \mid z_1^2+z_2^2+\cdots+z_n^2=0\right\}.    
     \end{equation*}
-    Iz formulacije Weierstrass-Enneperjevega reprezentacijskega izreka je očitno, da ničelna kvadrika igra ključno vlogo v teoriji minimalnih ploskev. Če ji odstarnimo izhodišče dobimo \textcolor{red1}{punktriano ničelno kvadriko} $\mathbb{A}_*=\mathbb{A} \setminus \{0\}$. 
-    
+    Očitno je, da ničelna kvadrika igra ključno vlogo v teoriji minimalnih ploskev. Če ji odstarnimo izhodišče dobimo \textcolor{red1}{punktriano ničelno kvadriko} $\mathbb{A}_*=\mathbb{A} \setminus \{0\}$. 
+    \pause
     \vspace{0.8em}
     
     Vse konformne minimalne ploskve $D \rightarrow \mathbb{R}^n$ dobimo kot integrale holomorfnih preslikav $f: D \rightarrow \mathbb{A}_* \subset \mathbb{C}^n$, ki zadostujejo pogoju za ničelno periodnost. Ker je $f$ holomorfna, je dovolj da pogoj za ničelno periodnost preverimo na homološki bazi $H_1(D, \mathbb{Z})$. Če je $D$ enostavno povezano območje je pogoj izpolnjen na prazno. 
-    
-    
-\end{frame}
-
-\begin{frame}
-    \frametitle{Weierstrass-Enneperjeva formula v dimenziji $n=3$}
+    \pause
+    \vspace{0.8em}
 
     V dimenziji $n=3$ ničelna kvadrika premore dvojno holomorfno pokritje $\phi: \mathbb{C}_*^2 \rightarrow \mathbb{A}_*^2$
     \begin{equation*}
         \phi(z, w)=\left(z^2-w^2, \mathfrak{i}\left(z^2+w^2\right), 2 z w\right)
     \end{equation*}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Weierstrass-Enneperjeva formula v dimenziji $n=3$}
+
     Označimo $\partial X=\frac{\partial X}{\partial z} \mathrm{d} z$. Weierstrass-Enneperjeva furmula za konformno minimalno imerzijo $X=\left(X_1, X_2, X_3\right): D \rightarrow \mathbb{R}^3$ dobi bolj konkretno obliko:
     \begin{equation*}
         X(z)=z_0+\Re \int_{z_0}^z\left(\frac{1}{2}\left(\frac{1}{\mathfrak{g}}-\mathfrak{g}\right), \frac{\mathfrak{i}}{2}\left(\frac{1}{\mathfrak{g}}+\mathfrak{g}\right), 1\right) \partial X_3, 
@@ -918,14 +992,14 @@
     \begin{equation*}
         \mathfrak{g}=\frac{\partial X_3}{\partial X_1-\mathfrak{i} \partial X_2}: D \longrightarrow \mathbb{C P}^1 = \mathbb{C}\cup \{\infty \}
     \end{equation*}
-    holomorfna preslikava na Riemannovo sfero (torej meromorfna funkcija na $D$), ki ji pravimo \textcolor{red1}{kompleksna Gaussova preslikava}. Določa veliko pomembnih lastnosti minimalne ploskve. Kompleksno Gaussovo preslikavo dobimo, če standardno Gaussovo preslikavo 
+    holomorfna preslikava na Riemannovo sfero (torej meromorfna funkcija na $D$), ki ji pravimo \textcolor{red1}{kompleksna Gaussova preslikava}. \pause Določa veliko pomembnih lastnosti minimalne ploskve. Kompleksno Gaussovo preslikavo dobimo, če standardno Gaussovo preslikavo 
     \begin{equation*}
         \mathbf{N}=\frac{X_x \times X_y}{\left|X_x \times X_y\right|}: M \rightarrow S^2 \subset \mathbb{R}^3,
     \end{equation*}
     komponiramo s stereografsko projekcijo $S^2 \rightarrow \mathbb{CP}^1$. 
 
     \vspace{0.8em}
-
+    \pause 
     Torej za konstrukcijo minimalne ploskve s pomočjo Weierstrass-Enneperjeve formule izberemo poljubno meromorfno funkcijo $\mathfrak{g}$ diferencial $\partial X_3 = f(z) \mathrm{d}z$, kjer dodatno velja, da sta $f \mathfrak{g}$ in $f /\mathfrak{g}$ holomorfni funkciji, ki nimata skupne ničle. Integral mora zadošča pogoju za ničelnost realne periode. 
 
     % Ena najbolj zanimivih in pomembnih lastnosti kompleksne Gaussove preslikave je ta, da je totalna Gaussova ukrivljenost $\mathrm{TC}(S)=\int_S K \cdot \mathrm{d} A \in[-\infty, 0]$ konformne minimalne ploskve $X: D \rightarrow \mathbb{R}^3$ enaka površini Gaussove preslikave $\mathfrak{g}: D \rightarrow \mathbb{C P}^1$ (šteto z večkratnostmi), kjer je površina $\mathbb{C P}^1=S^2$ enaka $4 \pi$. Eksplicitno povedano: 
@@ -942,6 +1016,7 @@
     \begin{equation*}
         X(z)=\Re \int_0^z\left(\frac{1}{2}\left(\frac{1}{\mathrm{e}^{\mathrm{i} \zeta}}-\mathrm{e}^{\mathrm{i} \zeta}\right), \frac{\mathfrak{i}}{2}\left(\frac{1}{\mathrm{e}^{\mathrm{i} \zeta}}+\mathrm{e}^{\mathrm{i} \zeta}\right), 1\right) d \zeta .
     \end{equation*}
+    \pause
     \begin{columns}
         \begin{column}{0.475\textwidth}
             Prva komponenta:
@@ -957,7 +1032,7 @@
               }%
             }
         \end{column}
-
+        \pause
         \begin{column}{0.475\textwidth}
             Druga komponenta:
             \scalebox{0.8}{%
@@ -973,9 +1048,11 @@
             }
         \end{column}
     \end{columns}
+    \pause
     \begin{equation*}
         \text{Tretja komponenta: } X_3=\Re \int_0^z 1 \, \mathrm{d}\zeta = \Re \left(u + \mathfrak{i}v\right) = u.
     \end{equation*}
+    \pause
     Vidimo, da je to ravno reparametrizacija helikoida, ki smo ga videli na začetku. 
     \begin{equation*}
         X(u, v) = \left( \sin u \cdot \sinh v,\ -\cos u \cdot \sinh v,\ u \right).
@@ -1023,7 +1100,7 @@
 
         \caption{Enneperjeva ploskev}
     \end{figure}
-
+    \pause 
     Za Gaussovo preslikavo izberemo $\mathfrak{g}(z)=z$. Če vzamemo $\partial X_3=2 z \mathrm{d} z$ dobimo Enneperjevo ploskev, če pa vzamemo $\partial X_3=\frac{\mathrm{d} z}{z}$ pa dobimo katenoid. Eksplicitno povedano: 
     \begin{equation*}
         \text { Enneperjeva ploskev } \quad X(z)=\Re \int_0^z\left(\frac{1}{2}\left(\frac{1}{\zeta}-\zeta\right), \frac{\mathfrak{i}}{2}\left(\frac{1}{\zeta}+\zeta\right), 1\right) 2 \zeta \, \mathrm{d} \zeta,
@@ -1040,7 +1117,7 @@
     \begin{equation*}
         \left(F_1^{\prime}\right)^2+\left(F_2^{\prime}\right)^2+\cdots+\left(F_n^{\prime}\right)^2=0      
     \end{equation*}
-    je \textcolor{red1}{holomorfna ničelna krivulja}. Vsaka taka je oblike 
+    je \textcolor{red1}{holomorfna ničelna krivulja}. \pause Vsaka taka je oblike 
     \begin{equation*}
         F(z)=c+\int_{z_0}^z f(\zeta) \, \mathrm{d} \zeta, \quad z \in D,
     \end{equation*}
@@ -1048,11 +1125,13 @@
     \begin{equation*}
         \oint_C f \, \mathrm{d} z=0 \quad \text { za vsako krivuljo } [C] \in H_1(D, \mathbb{Z}). 
     \end{equation*}
+    \pause 
     Torej, vsaka holomorfna funkcija, ki slika iz enostavnega povezanega območja v punktirano ničelno kvadriko določa holomorfno ničelno krivuljo po zgornji formuli. 
-
+    \pause 
     \vspace{0.8em}
     
-    Če je $F=X+\mathfrak{i} Y: D \rightarrow \mathbb{C}^n$ holomorfna ničelna krivulja, potem sta njen realni del $X=\Re F: D \rightarrow \mathbb{R}^n$ in njen imaginarni del $Y=\Im F: D \rightarrow \mathbb{R}^n$ konformni minimalni ploskvi. 
+    Če je $F=X+\mathfrak{i} Y: D \rightarrow \mathbb{C}^n$ holomorfna ničelna krivulja, potem sta $X=\Re F: D \rightarrow \mathbb{R}^n$ in $Y=\Im F: D \rightarrow \mathbb{R}^n$ konformni minimalni ploskvi. 
+    \pause 
     %Po drugi strani, pa je vsaka konformna minimalna ploskev lokalno (na vsaki enostavni povezani domeni) relani del holomorfne ničelne krivulje. 
     Ker sta $X$ in $Y$ harmonični konjugiranki, pravimo, da sta \textcolor{red1}{konjugirani minimalni ploskvi}. 
     
@@ -1072,7 +1151,7 @@
     \begin{equation*}
         F(\zeta)=(\cos \zeta, \sin \zeta,-i \zeta), \quad \zeta=x+\mathfrak{i} y \in \mathbb{C}.
     \end{equation*}
-
+    \pause
     \begin{columns}
         \begin{column}{0.37\textwidth}
             \begin{figure}
@@ -1081,9 +1160,9 @@
                 \caption{Helikatenoid}
             \end{figure}
         \end{column}
-
+        
         \begin{column}{0.63\textwidth}
-            Oglejmo si pridružene minimalne ploskve te ničelne krivulje:
+            Pridružene minimalne ploskve te ničelne krivulje:
             \begin{align*}
                 G_t(\zeta) & =\Re\left(e^{i t} F(\zeta)\right) \\
                 & =\cos t\begin{pmatrix}
@@ -1097,6 +1176,7 @@
                 \end{pmatrix}
             \end{align*}
             Pri $t=0$ imamo katenoid in pri $t= \pm \pi / 2$ pa helikoid. 
+            \vspace{6em}
         \end{column}
     \end{columns}
     
